@@ -3,14 +3,11 @@
 
 @domain = {{domain_local}}
 
-###
+### 200 OK
 GET {{domain}}/api/fans
 
-###
-GET {{domain}}/api/fans/1
+### 200 OK
+GET {{domain}}/api/fans/88BFB08D-18E9-410C-96DE-020070CFD08A
 
-###
-GET {{domain}}/api/fans/2
-
-###
-GET {{domain}}/api/fans/3
+### 400 Bad Request
+GET {{domain}}/api/fans/234234

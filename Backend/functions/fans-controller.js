@@ -1,26 +1,42 @@
-import { StatusCodes } from 'http-status-codes';
+const db = require('../services/query-db');
+
+const badRequest = { statusCode: 400 };
 
 const getAllFans = async () => {
-  const response = {}; // get all fan objects from db
+  const { recordsets } = await db.query("SELECT * FROM [Fan]");
+
+  if (recordsets === undefined) {
+    return badRequest;
+  }
 
   return {
-    statusCode: StatusCodes.OK,
-    body: JSON.stringify(response)
+    statusCode: 200,
+    body: JSON.stringify(recordsets[0])
   };
 }
 
 const getFanByID = async (event) => {
   const { id } = event.pathParameters;
 
-  if (id === null) {
-    return { statusCode: StatusCodes.BAD_REQUEST };
+  if (id === undefined) {
+    return badRequest;
   }
 
-  const response = {}; // get all fans with {id}
+  const response = await db.query(`SELECT * FROM [Fan] WHERE FanId = '${id}'`);
+
+  if (response === undefined) {
+    return badRequest;
+  }
+
+  const records = response.recordsets[0][0];
+
+  if (records === undefined) {
+    return badRequest;
+  }
 
   return {
-    statusCode: StatusCodes.OK,
-    body: JSON.stringify(response),
+    statusCode: 200,
+    body: JSON.stringify(records),
   };
 }
 

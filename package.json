@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "install:backend": "cd Backend && npm i",
-    "start:backend": "cd Backend && npm run start:offline",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start:backend": "cd Backend && npm run start:offline"
   },
   "repository": {
     "type": "git",
