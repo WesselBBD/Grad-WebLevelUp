@@ -20,5 +20,5 @@ Alternatively, `cd Backend && serverless offline`
 
 ## Details
 
-- App will run on `PORT:4000` but don't mess with `4000`, 4001` or `4002`.
+- App will run on `PORT:4000` but don't mess with `4000`, `4001` or `4002`.
 - `Backend/client.rest` contains endpoints to test with expected results defined in comment above
