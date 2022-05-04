@@ -3,4 +3,14 @@
 
 @domain = {{domain_local}}
 
-GET {{domain}}/api/mock
+###
+GET {{domain}}/api/fans
+
+###
+GET {{domain}}/api/fans/1
+
+###
+GET {{domain}}/api/fans/2
+
+###
+GET {{domain}}/api/fans/3
