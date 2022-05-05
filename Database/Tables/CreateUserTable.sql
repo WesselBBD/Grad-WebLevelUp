@@ -12,7 +12,3 @@ GO
 
 ALTER TABLE [dbo].[User] ADD CONSTRAINT [PK_UserId] PRIMARY KEY CLUSTERED ([UserId]);
 GO
-
-
-
-GO

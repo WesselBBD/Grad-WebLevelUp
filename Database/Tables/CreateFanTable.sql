@@ -5,9 +5,11 @@ GO
 CREATE TABLE [dbo].[Fan]
 (
     [FanId] [UNIQUEIDENTIFIER] NOT NULL,                        -- primary key column
-	[FanName] [VARCHAR](150) NOT NULL,
-	[FanModel] [VARCHAR](150) NOT NULL,
-    [BrandId] [SMALLINT] NOT NULL
+    [ImageURI] [VARCHAR] (100) NOT NULL,
+    [FanName] [VARCHAR](150) NOT NULL,
+    [BrandId] [SMALLINT] NOT NULL,
+    [FanModel] [VARCHAR](150) NOT NULL,
+    [FanMaxRPM] [INT] NOT NULL,
 );
 GO
 
