@@ -9,7 +9,13 @@ GO
 
 GO
 
-:r $(path)\Views\vAllFans.sql
+:r $(path)\Views\vFullFans.sql
+:r $(path)\Views\vHumanReadableWiki.sql
+
+GO
+
+:r $(path)\Procedures\pGetFan.sql
+:r $(path)\Procedures\pGetUser.sql
 
 GO
 

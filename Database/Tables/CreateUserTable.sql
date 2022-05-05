@@ -11,4 +11,5 @@ CREATE TABLE [dbo].[User]
 GO
 
 ALTER TABLE [dbo].[User] ADD CONSTRAINT [PK_UserId] PRIMARY KEY CLUSTERED ([UserId]);
+ALTER TABLE [dbo].[User] ADD CONSTRAINT [Unique_UserEmail] UNIQUE ([UserEmail]);
 GO
