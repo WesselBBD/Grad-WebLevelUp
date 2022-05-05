@@ -1,0 +1,13 @@
+@domain_remote =  -
+@domain_local =  http://localhost:4000/dev
+
+@domain = {{domain_local}}
+
+### 200 OK
+GET {{domain}}/api/fans
+
+### 200 OK
+GET {{domain}}/api/fans/88BFB08D-18E9-410C-96DE-020070CFD08A
+
+### 400 Bad Request
+GET {{domain}}/api/fans/234234

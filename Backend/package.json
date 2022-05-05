@@ -1,0 +1,19 @@
+{
+  "scripts": {
+    "start:offline": "serverless offline",
+    "debug": "serverless offline start --noTimeout",
+    "deploy": "serverless deploy"
+  },
+  "devDependencies": {
+    "aws-sdk": "^2.989.0",
+    "eslint": "^7.32.0",
+    "serverless": "^2.57.0",
+    "serverless-offline": "^8.0.0",
+    "serverless-plugin-include-dependencies": "^5.0.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "http-status-codes": "^2.1.4",
+    "mssql": "^8.1.0"
+  }
+}
