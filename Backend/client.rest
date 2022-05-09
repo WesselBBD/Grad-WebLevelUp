@@ -7,7 +7,7 @@
 GET {{domain}}/api/fans
 
 ### 200 OK
-GET {{domain}}/api/fans/88BFB08D-18E9-410C-96DE-020070CFD08A
+GET {{domain}}/api/fans/80D3215D-F761-46CC-A71B-06F5529C17DC
 
 ### 400 Bad Request
 GET {{domain}}/api/fans/234234
