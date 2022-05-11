@@ -1,14 +1,3 @@
-/* Creates 5 Star Rating Component (not interactive)
-Produces:
-<section>
-  <img src="star.svg" />
-  <img src="star.svg" />
-  <img src="star.svg" />
-  <img src="star.svg" />
-  <img src="star.svg" />
-</section>
-*/
-
 const createStars = (checkedCount = 0) => {
   if (checkedCount < 0 || checkedCount > 5) {
     return;
