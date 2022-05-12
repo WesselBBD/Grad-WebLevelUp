@@ -2,6 +2,7 @@
 
 @import "components/stars/stars.css";
 @import "components/card/card.css";
+@import "components/button/button.css";
 
 * {
   font-family: "Montserrat", sans-serif;
