@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap");
 
 @import "components/stars/stars.css";
+@import "components/card/card.css";
 
 * {
   font-family: "Montserrat", sans-serif;
@@ -8,6 +9,7 @@
 
 body {
   margin: 0;
+  background-color: var(--bg-primary);
 }
 
 header,
