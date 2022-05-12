@@ -66,8 +66,8 @@ window.addEventListener("load", function() {
   exploreSection.appendChild(heading);
   
   // appending cards and sections to body
-  const [body] = document.getElementsByTagName("body");
-  body.appendChild(discoverSection);
-  body.appendChild(heading);
-  body.appendChild(exploreSection);
+  const [main] = document.getElementsByTagName("main");
+  main.appendChild(discoverSection);
+  main.appendChild(heading);
+  main.appendChild(exploreSection);
 });
