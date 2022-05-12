@@ -1,3 +1,31 @@
-.star-box img {
-  height: 2rem;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap");
+
+@import "components/slider/slider.css";
+
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+:root {
+  --turquoise: #00aff0;
+}
+
+body {
+  margin: 0;
+}
+
+header,
+main,
+footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.5);
 }
