@@ -1,3 +1,17 @@
-.star-box img {
-  height: 2rem;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap");
+
+@import "components/stars/stars.css";
+
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+header,
+main,
+footer {
+  width: 100%;
 }
