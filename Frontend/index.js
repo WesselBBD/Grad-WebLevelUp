@@ -11,17 +11,63 @@ button.addEventListener("click", function () {
   body.appendChild(stars);
 });*/
 
-// creates two cards - Featured and Fan of the Week
+// creates the sections and cards on the home page
 window.addEventListener("load", function() {
-  const card = createCard("ceiling.jpg", "You know what they say about a", "small package");
-  card.setAttribute("id", "featured");
+  // discover section
+  const discoverSection = this.document.createElement("section");
+  discoverSection.setAttribute("id", "discover");
 
-  const card1 = createCard("ceiling.jpg", "Fan of the Week", "Dyson Air Multiplier", "No Blades, Full Power");
-  card1.setAttribute("id", "fotw");
-  const stars = createStars(Math.round(Math.random() * 5)); // test to add star component to card
-  card.appendChild(stars);
+  const featuredCard = createCard("CeilingFan4.png", "You know what they say about a", "small package");
+  featuredCard.setAttribute("id", "featured");
+
+  const fotwCard = createCard("CeilingFan4.png", "Fan of the Week", "Dyson Air Multiplier", "No Blades, Full Power");
+  fotwCard.setAttribute("id", "fotw");
+
+  const pickAFanCard = createCard("CeilingFan3.png", "Pick a fan,", "any fan");
+  pickAFanCard.setAttribute("id", "pick-a-fan");
+
+  discoverSection.appendChild(featuredCard);
+  discoverSection.appendChild(fotwCard);
+  discoverSection.appendChild(pickAFanCard);
+
+  // explore section
+  const exploreSection = this.document.createElement("section");
+  exploreSection.setAttribute("id", "explore");
+
+  const standingCard = createCard("CeilingFan4.png", "Standing Fans", "Give it a spin.");
+  standingCard.setAttribute("id", "standing");
+
+  const deskCard = createCard("DeskFan1.png", "Desk Fans", "Give it a spin.");
+  deskCard.setAttribute("id", "desk");
+
+  const ceilingCard = createCard("CeilingFan1.png", "Ceiling Fans", "Fans in high places.");
+  ceilingCard.setAttribute("id", "ceiling");
+
+  const handheldCard = createCard("Turbine1.png", "Turbine", "Get blown away.");
+  handheldCard.setAttribute("id", "turbine");
+
+  const caseCard = createCard("CaseFan5.png", "Case Fans", "Give it a spin.");
+  caseCard.setAttribute("id", "case");
+
+  const airconCard = createCard("CeilingFan4.png", "Airconditioning", "AC what you did there.");
+  airconCard.setAttribute("id", "aircon");
+
+  exploreSection.appendChild(standingCard);
+  exploreSection.appendChild(deskCard);
+  exploreSection.appendChild(ceilingCard);
+  exploreSection.appendChild(handheldCard);
+  exploreSection.appendChild(caseCard);
+  exploreSection.appendChild(airconCard);
+
+  const heading = document.createElement("h2");
+  let headingText = document.createTextNode("Explore our Fans");
+  heading.appendChild(headingText);
+  heading.classList.add("heading");
+  exploreSection.appendChild(heading);
   
+  // appending cards and sections to body
   const [body] = document.getElementsByTagName("body");
-  body.appendChild(card);
-  body.appendChild(card1);
+  body.appendChild(discoverSection);
+  body.appendChild(heading);
+  body.appendChild(exploreSection);
 });
