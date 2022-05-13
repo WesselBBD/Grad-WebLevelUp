@@ -9,7 +9,6 @@ header.append(... createHeader().children);
 const [footer] = document.getElementsByTagName("footer");
 footer.append(... createFooter().children);
 
-/*
 const button = document.getElementById("add-star");
 button.addEventListener("click", function () {
   const stars = createStars(Math.round(Math.random() * 5));
@@ -18,7 +17,6 @@ button.addEventListener("click", function () {
 
   body.appendChild(stars);
 });
-*/
 
 const [main] = document.getElementsByTagName("main");
 
