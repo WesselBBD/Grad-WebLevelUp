@@ -2,9 +2,15 @@
 
 @import "components/stars/stars.css";
 @import "components/card/card.css";
+@import "components/header/header.css";
 
 * {
   font-family: "Montserrat", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 body {
@@ -12,7 +18,6 @@ body {
   background-color: var(--bg-primary);
 }
 
-header,
 main,
 footer {
   width: 100%;

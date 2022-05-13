@@ -1,15 +1,21 @@
 import { createStars } from "./components/stars/stars.js";
 import { createCard } from "./components/card/card.js";
+import { createHeader } from "./components/header/Header.js";
 
-/*const button = document.getElementById("add-star");
+const [header] = document.getElementsByTagName("header");
 
+header.append(... createHeader().children);
+
+/*
+const button = document.getElementById("add-star");
 button.addEventListener("click", function () {
   const stars = createStars(Math.round(Math.random() * 5));
 
   const [body] = document.getElementsByTagName("body");
 
   body.appendChild(stars);
-});*/
+});
+*/
 
 // creates two cards - Featured and Fan of the Week
 window.addEventListener("load", function() {
