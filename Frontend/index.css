@@ -1,4 +1,4 @@
-@import "colours.css";
+@import "./colours.css";
 
 html {
     margin: 0 1rem;
@@ -12,6 +12,11 @@ html {
     margin-bottom: 1rem;
 }
 
+#exploreBtn {
+    float: right;
+    margin-top: 1.5rem;
+}
+
 #discover {
     display: grid;
     grid-auto-flow: column;
@@ -20,17 +25,18 @@ html {
       "A B"
       "A C";
     height: 60rem;
+    margin-top: 1rem;
 }
 
 /* FEATURED CARD */
 
 #featured {
     grid-area: A;
+    text-align: left;
 }
 
 #featured h1 {
     text-transform: uppercase;
-    text-align: left;
     font-size: 1.5rem;
     font-weight: 500;
     margin-bottom: 0;
@@ -42,7 +48,6 @@ html {
     font-size: 4rem;
     font-weight: 900;
     letter-spacing: -0.04rem;
-    text-align: left;
     margin-top: 0;
 }
 
@@ -87,6 +92,7 @@ html {
       "A D E"
       "A F F";
     height: 60rem;
+    margin-bottom: 1rem;
 }
 
 #standing {
