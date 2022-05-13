@@ -2,12 +2,13 @@
 
 import { makeUL } from "../common/list.js";
 import { anchorLink } from "../common/anchor.js";
+import { createLogoBox } from "../logo/logo.js";
 
 const createHeader = () => {
   //base
   const header = document.createElement("header");
 
-  const logoBox = createLogoBox()
+  const logoBox = createLogoBox("header-img-box")
 
   const navBox = createNavBox();
 
@@ -34,18 +35,6 @@ const createNavBox = () => {
   navBox.appendChild(nav);
 
   return navBox;
-}
-
-const createLogoBox = () => {
-  const logoBox = document.createElement("section");
-  logoBox.id = "header-img-box";
-
-  const logo = document.createElement("img");
-  logo.setAttribute("src", "assets/imgs/logo.svg");
-
-  logoBox.appendChild(logo);
-
-  return logoBox;
 }
 
 export { createHeader };
