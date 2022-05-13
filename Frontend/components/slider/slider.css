@@ -24,10 +24,8 @@
   -webkit-appearance: none;
   cursor: pointer;
   background: transparent;
-  background: ghostwhite;
+  background-color: var(--bg-secondary);
   border-radius: 2rem;
-
-  box-shadow: inset 0px 0px 0px 3px var(--black);
 }
 
 /* Chrome, Safari */
@@ -37,12 +35,12 @@
   width: 4rem;
   border-radius: 2rem;
 
-  background-image: url("../../assets/imgs/logo-blackani.svg");
+  background-image: url("../../assets/imgs/icon-ani.svg");
   background-repeat: no-repeat;
   background-size: contain;
 
-  box-shadow: -1000px 0 0 calc(1000px - 2rem) var(--black),
-    inset 0px 0px 0px 2px var(--black);
+  box-shadow: -1000px 0 0 calc(1000px - 2rem) var(--turquoise),
+    inset 0px 0px 0px 2px var(--turquoise);
 }
 
 /* Edge, IE */
@@ -52,12 +50,12 @@
   width: 4rem;
   border-radius: 2rem;
 
-  background-image: url("../../assets/imgs/logo-blackani.svg");
+  background-image: url("../../assets/imgs/icon-ani.svg");
   background-repeat: no-repeat;
   background-size: contain;
 
-  box-shadow: -1000px 0 0 calc(1000px - 2rem) var(--black),
-    inset 0px 0px 0px 2px var(--black);
+  box-shadow: -1000px 0 0 calc(1000px - 2rem) var(--turquoise),
+    inset 0px 0px 0px 2px var(--turquoise);
 }
 
 /* Firefox */
@@ -67,12 +65,16 @@
   width: 4rem;
   border-radius: 2rem;
 
-  background-image: url("../../assets/imgs/logo-blackani.svg");
+  background-image: url("../../assets/imgs/icon-ani.svg");
   background-repeat: no-repeat;
   background-size: contain;
 
-  box-shadow: -1000px 0 0 calc(1000px - 2rem) var(--black),
-    inset 0px 0px 0px 2px var(--black);
+  box-shadow: -1000px 0 0 calc(1000px - 2rem) var(--turquoise),
+    inset 0px 0px 0px 2px var(--turquoise);
+}
+
+.slider-box label {
+  font-weight: bold;
 }
 
 .slider-box label mark {

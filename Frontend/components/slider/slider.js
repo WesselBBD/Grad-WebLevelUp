@@ -2,7 +2,7 @@ import { setAttributes } from "../../utils/helpers.js";
 
 const createSlider = (
   title,
-  { initialValue = 0, min = 0, max = 100, step = 10, onInput = () => {} }
+  { initialValue = 0, min = 0, max = 100, step = 10, onInput = () => {} } = {}
 ) => {
   const sliderBox = document.createElement("section");
   sliderBox.classList.add("slider-box");
@@ -11,7 +11,7 @@ const createSlider = (
   const mark = document.createElement("mark");
 
   mark.innerText = initialValue;
-  label.innerText = `${title}: `;
+  label.innerText = `${title} `;
   label.appendChild(mark);
 
   const input = document.createElement("input");
