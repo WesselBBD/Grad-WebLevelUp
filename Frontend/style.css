@@ -1,11 +1,20 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 @import "components/stars/stars.css";
 @import "components/card/card.css";
 @import "components/button/button.css";
+@import "components/header/header.css";
+@import "components/footer/footer.css";
+@import "colours.css";
+
 
 * {
   font-family: "Montserrat", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 body {
@@ -13,8 +22,20 @@ body {
   background-color: var(--bg-primary);
 }
 
-header,
-main,
-footer {
+main {
   width: 100%;
+}
+
+header,
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #F7F8F9;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-top: 16px;
+  padding-bottom: 16px;
 }
