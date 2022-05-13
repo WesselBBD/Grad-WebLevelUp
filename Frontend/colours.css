@@ -1,6 +1,8 @@
 :root {
-    --bg-primary: #EDF4FA;
-    --btn-primary: #00AFF0;
-    --green: #00F090;
-    --dark: #313131;
-  }
+  --bg-primary: #edf4fa;
+  --btn-primary: #00aff0;
+  --green: #00f090;
+  --dark: #313131;
+  --turquoise: #00aff0; /* we'll sort this at a later stage */
+  --grey: #e1e5e7;
+}
