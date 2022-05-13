@@ -1,5 +1,6 @@
 import { createStars } from "./components/stars/stars.js";
 import { createCard } from "./components/card/card.js";
+import { createButton } from "./components/button/button.js";
 import { createHeader } from "./components/header/header.js";
 import { createFooter } from "./components/footer/footer.js";
 
@@ -29,7 +30,14 @@ window.addEventListener("load", function() {
   card1.setAttribute("id", "fotw");
   const stars = createStars(Math.round(Math.random() * 5)); // test to add star component to card
   card.appendChild(stars);
+  const button = createButton();
+  card1.appendChild(button);
+  const [body] = document.getElementsByTagName("body");
+
+  body.appendChild(card);
+  body.appendChild(card1);
   
   main.appendChild(card);
   main.appendChild(card1);
+
 });
