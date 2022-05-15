@@ -4,6 +4,7 @@ import { createButton } from "./components/button/button.js";
 import { createHeader } from "./components/header/header.js";
 import { createFooter } from "./components/footer/footer.js";
 
+
 const [header] = document.getElementsByTagName("header");
 header.append(...createHeader().children);
 
@@ -34,9 +35,15 @@ window.addEventListener("load", function () {
   card1.appendChild(button);
   const [body] = document.getElementsByTagName("body");
 
+  
+
   body.appendChild(card);
   body.appendChild(card1);
 
   main.appendChild(card);
   main.appendChild(card1);
+
+
+
+
 });
