@@ -58,7 +58,7 @@ html {
 }
 
 #fotw h1 {
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 #fotw h2 {
@@ -117,4 +117,22 @@ html {
 
 #aircon {
     grid-area: F;
+}
+
+.test {
+  /* -webkit-appearance: none; */
+  background-color: orange;
+  color: yellow;
+}
+
+.test::-webkit-slider-runnable-track {
+  /* -webkit-appearance: none; */
+  /* background: green; */
+}
+
+.test::-webkit-slider-thumb {
+  /* these should be the dimensions of your image */
+  height: 20px;
+  width: 20px;
+  background: #000; /* or your image */
 }

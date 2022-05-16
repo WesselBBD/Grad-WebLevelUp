@@ -5,7 +5,7 @@ import { createHeader } from "./components/header/header.js";
 import { createFooter } from "./components/footer/footer.js";
 
 const [header] = document.getElementsByTagName("header");
-header.append(... createHeader().children);
+header.append(...createHeader().children);
 
 const [footer] = document.getElementsByTagName("footer");
 footer.append(... createFooter().children);
