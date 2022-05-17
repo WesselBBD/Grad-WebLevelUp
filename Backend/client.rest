@@ -7,7 +7,4 @@
 GET {{domain}}/api/fans
 
 ### 200 OK
-GET {{domain}}/api/fans/80D3215D-F761-46CC-A71B-06F5529C17DC
-
-### 400 Bad Request
-GET {{domain}}/api/fans/234234
+GET {{domain}}/api/fans?category=CeilingFans&rpm=2500&cfm=2654&sweep=32

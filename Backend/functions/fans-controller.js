@@ -1,52 +1,54 @@
-const db = require('../services/query-db');
+const db = require("../services/query-db");
 
 const badRequest = { statusCode: 400 };
 const serverError = { statusCode: 500 };
 
-const getAllFans = async () => {
+const filterFans = async ({ category, rpm, cfm, sweep }) => {
   try {
-    const { recordsets } = await db.query("SELECT * FROM [Fan]");
-
-  if (recordsets === undefined) {
-    return badRequest;
-  }
-
-  return {
-    statusCode: 200,
-    body: JSON.stringify(recordsets[0])
-  };
-  } catch (error) {
-    return serverError;
-  }
-}
-
-const getFanByID = async (event) => {
-  try {
-    const { id } = event.pathParameters;
-
-    if (id === undefined) {
-      return badRequest;
-    }
-
-    const response = await db.query(`SELECT * FROM [Fan] WHERE FanId = '${id}'`);
-
-    if (response === undefined) {
-      return badRequest;
-    }
-
-    const records = response.recordsets[0][0];
-
-    if (records === undefined) {
-      return badRequest;
-    }
+    const response = []; // await db.query('CALL filterFans(category, rpm, cfm, sweep))
 
     return {
       statusCode: 200,
-      body: JSON.stringify(records),
+      body: JSON.stringify(response),
     };
   } catch (error) {
+    console.log(error);
     return serverError;
   }
-}
+};
 
-module.exports = { getAllFans, getFanByID };
+const getFans = async (event) => {
+  console.log(JSON.stringify(event));
+
+  if (event.queryStringParameters !== null) {
+    const { category, rpm, cfm, sweep } = event.queryStringParameters;
+
+    if (
+      category !== undefined &&
+      rpm !== undefined &&
+      cfm !== undefined &&
+      sweep !== undefined
+    ) {
+      return filterFans({ category, rpm, cfm, sweep });
+    }
+  }
+
+  try {
+    const data = await db.query("SELECT * FROM vFullFans;");
+
+    response = data.map(({ "BIN_TO_UUID(`F`.`FanId`,true)": id, ...rest }) => ({
+      id,
+      ...rest,
+    }));
+
+    return {
+      statusCode: 200,
+      body: JSON.stringify(response),
+    };
+  } catch (error) {
+    console.log(error);
+    return serverError;
+  }
+};
+
+module.exports = { getFans };

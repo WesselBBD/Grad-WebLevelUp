@@ -19,22 +19,13 @@ custom:
     lambdaPort: 4002
 
 functions:
-  allFans:
-    name: ${self:service}-AllFans
-    handler: functions/fans-controller.getAllFans
+  Fans:
+    name: ${self:service}-fans-getter
+    handler: functions/fans-controller.getFans
     events:
       - http:
           path: api/fans
           method: get
           cors: true
-  fansByID:
-    name: ${self:service}-fansByID
-    handler: functions/fans-controller.getFanByID
-    events:
-      - http:
-          path: api/fans/{id}
-          method: get
-          cors: true
-
 plugins:
   - serverless-offline
