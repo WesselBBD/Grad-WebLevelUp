@@ -1,6 +1,6 @@
 @import "./colours.css";
 
-html {
+main {
     margin: 0 1rem;
 }
 
@@ -15,6 +15,10 @@ html {
 #exploreBtn {
     float: right;
     margin-top: 1.5rem;
+}
+
+.card {
+    text-align: right;
 }
 
 #discover {

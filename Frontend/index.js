@@ -3,6 +3,7 @@ import { createCard } from "./components/card/card.js";
 import { createButton } from "./components/button/button.js";
 import { createHeader } from "./components/header/header.js";
 import { createFooter } from "./components/footer/footer.js";
+import { goToPage } from "./utils/navigation.js";
 
 const [header] = document.getElementsByTagName("header");
 header.append(...createHeader().children);
@@ -21,23 +22,29 @@ button.addEventListener("click", function () {
 
 const [main] = document.getElementsByTagName("main");
 
-// creates the sections and cards on the home page
 window.addEventListener("load", function() {
+  populatePageData();
+});
+
+// add the sections and cards to main container
+const populatePageData = () => {
   // discover section
-  const discoverSection = this.document.createElement("section");
+  const discoverSection = document.createElement("section");
   discoverSection.setAttribute("id", "discover");
 
-  const featuredCard = createCard("CeilingFan4.png", "You know what they say about a", "small package");
+  const cardGradient = "linear-gradient(270deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 60%)";
+
+  const featuredCard = createCard(cardGradient, "/assets/imgs/fan-categories/CeilingFan4.png", "You know what they say about a", "small package");
   featuredCard.setAttribute("id", "featured");
-  const featuredBtn = createButton("Browse Desk Fans");
+  const featuredBtn = createButton("Browse Desk Fans", goToPage.bind(this, "desk"));
   featuredCard.appendChild(featuredBtn);
 
-  const fotwCard = createCard("CeilingFan4.png", "Fan of the Week", "Dyson Air Multiplier", "No Blades, Full Power");
+  const fotwCard = createCard(cardGradient, "/assets/imgs/fan-categories/CeilingFan4.png", "Fan of the Week", "Dyson Air Multiplier", "No Blades, Full Power");
   fotwCard.setAttribute("id", "fotw");
   const fotwBtn = createButton("Explore");
   fotwCard.appendChild(fotwBtn);
 
-  const pickAFanCard = createCard("CeilingFan3.png", "Pick a fan,", "any fan");
+  const pickAFanCard = createCard(cardGradient, "/assets/imgs/fan-categories/CeilingFan3.png", "Pick a fan,", "any fan");
   pickAFanCard.setAttribute("id", "pick-a-fan");
   const pickAFanBtn = createButton("Take Me Places");
   pickAFanCard.appendChild(pickAFanBtn);
@@ -47,35 +54,35 @@ window.addEventListener("load", function() {
   discoverSection.appendChild(pickAFanCard);
 
   // explore section
-  const exploreSection = this.document.createElement("section");
+  const exploreSection = document.createElement("section");
   exploreSection.setAttribute("id", "explore");
 
-  const standingCard = createCard("CeilingFan4.png", "Standing Fans", "Give it a spin.");
+  const standingCard = createCard(cardGradient, "/assets/imgs/fan-categories/CeilingFan4.png", "Standing Fans", "Give it a spin.");
   standingCard.setAttribute("id", "standing");
-  const standingBtn = createButton("Explore");
+  const standingBtn = createButton("Explore", goToPage.bind(this, "standing"));
   standingCard.appendChild(standingBtn);
 
-  const deskCard = createCard("DeskFan1.png", "Desk Fans", "Give it a spin.");
+  const deskCard = createCard(cardGradient, "/assets/imgs/fan-categories/DeskFan1.png", "Desk Fans", "Give it a spin.");
   deskCard.setAttribute("id", "desk");
   const deskBtn = createButton("Explore");
   deskCard.appendChild(deskBtn);
 
-  const ceilingCard = createCard("CeilingFan1.png", "Ceiling Fans", "Fans in high places.");
+  const ceilingCard = createCard(cardGradient, "/assets/imgs/fan-categories/CeilingFan1.png", "Ceiling Fans", "Fans in high places.");
   ceilingCard.setAttribute("id", "ceiling");
   const ceilingBtn = createButton("Explore");
   ceilingCard.appendChild(ceilingBtn);
 
-  const handheldCard = createCard("Turbine1.png", "Turbine", "Get blown away.");
+  const handheldCard = createCard(cardGradient, "/assets/imgs/fan-categories/Turbine1.png", "Turbine", "Get blown away.");
   handheldCard.setAttribute("id", "turbine");
   const handheldBtn = createButton("Explore");
   handheldCard.appendChild(handheldBtn);
 
-  const caseCard = createCard("CaseFan5.png", "Case Fans", "Give it a spin.");
+  const caseCard = createCard(cardGradient, "/assets/imgs/fan-categories/CaseFan5.png", "Case Fans", "Give it a spin.");
   caseCard.setAttribute("id", "case");
   const caseBtn = createButton("Explore");
   caseCard.appendChild(caseBtn);
 
-  const airconCard = createCard("CeilingFan4.png", "Airconditioning", "AC what you did there.");
+  const airconCard = createCard(cardGradient, "/assets/imgs/fan-categories/CeilingFan4.png", "Airconditioning", "AC what you did there.");
   airconCard.setAttribute("id", "aircon");
   const airconBtn = createButton("Explore");
   airconCard.appendChild(airconBtn);
@@ -95,11 +102,9 @@ window.addEventListener("load", function() {
   exploreBtn.setAttribute("id", "exploreBtn");
   heading.appendChild(exploreBtn);
   exploreSection.appendChild(heading);
-  
-  
-  // appending cards and sections to body
-  const [main] = document.getElementsByTagName("main");
+
+  // appending cards and sections to main
   main.appendChild(discoverSection);
   main.appendChild(heading);
   main.appendChild(exploreSection);
-});
+}

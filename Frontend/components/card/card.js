@@ -1,7 +1,7 @@
-const createCard = (cardImage, cardTitle , cardHeading = '', cardSubheading = '') => {
+const createCard = (cardGradient, cardImage, cardTitle , cardHeading = '', cardSubheading = '') => {
     const card = document.createElement("article");
     card.classList.add("card");
-    card.style.background = "linear-gradient(270deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 60%), url('assets/imgs/fan-categories/" + cardImage + "')";
+    card.style.background = cardGradient + ", url('" + cardImage + "')";
     card.style.backgroundSize = "cover";
     card.style.backgroundPosition = "center";
     
