@@ -27,16 +27,7 @@ window.addEventListener("load", function() {
 
     const f=this.document.createTextNode("4");
     error.appendChild(f);
-
- 
-
-
     rotateFanSection.appendChild(error);
-  
-
-
-    
-
     main.appendChild(rotateFanSection);
 
 });
