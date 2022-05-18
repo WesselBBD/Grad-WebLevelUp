@@ -1,8 +1,8 @@
 // Creates Header Component
 
-import { makeUL } from "../common/list.js";
-import { anchorLink } from "../common/anchor.js";
-import { createLogoBox } from "../logo/logo.js";
+import { makeUL } from "../common/list.mjs";
+import { anchorLink } from "../common/anchor.mjs";
+import { createLogoBox } from "../logo/logo.mjs";
 
 const createHeader = () => {
   //base
