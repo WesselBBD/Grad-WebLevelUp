@@ -11,14 +11,7 @@ const normalizeNaming = (data) =>
 
 const filterFans = async ({ category, rpm, cfm, sweep }) => {
   try {
-    // Need to use proc
-    const data = await db.query(`SELECT *
-    FROM vFullFans AS F
-    WHERE F.FanRPM <= ${rpm}
-    AND F.FanCFM <= ${cfm}
-    AND F.FanSpanMM <= ${sweep}
-    AND F.FanCategoryName = '${category}';`);
-
+    const [data] = await db.query( `CALL pGetFansByAtributes(${rpm}, ${cfm}, ${sweep}, '${category}');`);
     const response = normalizeNaming(data);
 
     return {
