@@ -61,7 +61,7 @@ BEGIN
   WHERE `F`.`FanRPM` <= RPM
   AND `F`.`FanCFM` <= CFM
   AND `F`.`FanSpanMM` <= SPAN
-  AND `F`.`FanCategoryName` = @CATEGORY_NAME;
+  AND `F`.`FanCategoryName` = CATEGORY_NAME;
 END//
 
 DELIMITER ;
