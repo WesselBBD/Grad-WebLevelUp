@@ -22,6 +22,7 @@ functions:
   Fans:
     name: ${self:service}-fans-getter
     handler: functions/fans-controller.getFans
+    memorySize: 128
     events:
       - http:
           path: api/fans
