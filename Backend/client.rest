@@ -7,4 +7,7 @@
 GET {{domain}}/api/fans
 
 ### 200 OK
-GET {{domain}}/api/fans?category=CeilingFans&rpm=2500&cfm=2654&sweep=32
+GET {{domain}}/api/fans?category=Ceiling+Fans&rpm=300&cfm=4800&sweep=1750
+
+### 400 Bad Request - Has to have all parameters
+GET {{domain}}/api/fans?category=Ceiling+Fans

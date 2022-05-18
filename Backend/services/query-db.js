@@ -15,6 +15,7 @@ module.exports.query = async (queryString) => {
     return new Promise((resolve, reject) => {
       connection.query(queryString, function (err, rows) {
         connection.end();
+
         if (rows === undefined) {
           reject(new Error("No Data"));
         }
