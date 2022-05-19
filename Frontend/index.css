@@ -59,6 +59,7 @@ main {
 
 #fotw {
     grid-area: B;
+    background-size: contain;
 }
 
 #fotw h1 {

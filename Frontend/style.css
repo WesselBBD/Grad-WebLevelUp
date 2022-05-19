@@ -19,21 +19,6 @@ a {
   color: inherit;
 }
 
-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  height: 100vh;
-
-  margin: 0;
-  background-color: var(--bg-primary);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 100vh;
-}
-
 header,
 footer {
   display: flex;
@@ -66,4 +51,17 @@ footer {
 
 .content-container section.right {
   width: 46%;
+}
+
+.logo-img {
+  cursor: pointer;
+}
+
+#email-icon {
+  display: inline;
+  float: left;
+  position: relative;
+  margin-top: 0.15rem;
+  margin-left: 4rem;
+  margin-right: 0.25rem;
 }
