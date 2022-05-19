@@ -10,10 +10,12 @@ const createStars = (checkedCount = 0) => {
     const star = document.createElement("img");
 
     if (checkedCount > 0) {
-      star.setAttribute("src", "assets/imgs/star-filled.svg");
+
+      star.setAttribute("src", "/assets/imgs/star-filled.svg");
       checkedCount--;
     } else {
-      star.setAttribute("src", "assets/imgs/star-empty.svg");
+      star.setAttribute("src", "/assets/imgs/star-empty.svg");
+
     }
 
     starBox.appendChild(star);

@@ -1,29 +1,28 @@
-require('dotenv/config');
-const sql = require('mssql');
-
-const config = {
-  user: process.env.DB_USER,
-  password: process.env.DB_PWD,
-  database: process.env.DB_NAME,
-  server: process.env.DB_SERVER,
-  pool: {
-    max: 10,
-    min: 0,
-    idleTimeoutMillis: 30000
-  },
-  options: {
-    trustServerCertificate: true // true for local, false for deployed
-  }
-}
+require("dotenv/config");
+const mysql = require("mysql");
 
 module.exports.query = async (queryString) => {
+  const connection = mysql.createConnection({
+    host: process.env.DB_SERVER,
+    user: process.env.DB_USER,
+    password: process.env.DB_PWD,
+    database: process.env.DB_NAME,
+  });
+
   try {
-    const pool = await sql.connect(config);
+    connection.connect();
 
-    const response = await pool.request().query(queryString);
+    return new Promise((resolve, reject) => {
+      connection.query(queryString, function (err, rows) {
+        if (rows === undefined) {
+          reject(new Error("No Data"));
+        }
+        resolve(rows);
+      });
 
-    return response;
+      connection.end();
+    });
   } catch (error) {
     return undefined;
   }
-}
+};

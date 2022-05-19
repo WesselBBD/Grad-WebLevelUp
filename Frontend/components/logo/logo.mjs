@@ -4,7 +4,9 @@ const createLogoBox = (id) => {
   logoBox.id = id;
 
   const logo = document.createElement("img");
-  logo.setAttribute("src", "assets/imgs/logo.svg");
+
+  logo.setAttribute("src", "/assets/imgs/logo.svg");
+
   logo.classList.add("logo-img");
 
   logoBox.appendChild(logo);
