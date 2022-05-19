@@ -1,6 +1,6 @@
-import { createHeader } from "../components/header/header.mjs";
-import { createFooter } from "../components/footer/footer.mjs";
-import { createButton } from "../components/button/button.mjs";
+import { createHeader } from "../../components/header/header.mjs";
+import { createFooter } from "../../components/footer/footer.mjs";
+import { createButton } from "../../components/button/button.mjs";
 
 const [header] = document.getElementsByTagName("header");
 header.append(...createHeader().children);
@@ -52,14 +52,14 @@ form.onsubmit = (event) => {
       main.innerHTML = "";
 
       const logo = document.createElement("img");
-      logo.setAttribute("src", "../assets/imgs/logo.svg");
+      logo.setAttribute("src", "../../assets/imgs/logo.svg");
 
       const heading = document.createElement("h2");
       heading.innerText = "Newsletter Success!";
 
       const backButton = createButton(
         "BACK TO HOME",
-        () => (window.location.href = "../index.html")
+        () => (window.location.href = '/')
       );
 
       main.appendChild(logo);
