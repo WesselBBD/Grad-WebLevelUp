@@ -38,6 +38,14 @@ const createCardInfo = (fanData) => {
     colBub.setAttribute("style",styleCol); 
     colorsP.appendChild(colBub);
 
+    const colBubAcc=document.createElement("img");
+    colBubAcc.setAttribute("src","../../assets/imgs/star-temp.svg")
+    colBubAcc.setAttribute("id","colBubble");
+    let tempAcc = fanData.AccentColour.MaterialBubbleHex.substring(1);
+    let styleColAcc= "color:#"+ tempAcc
+    colBubAcc.setAttribute("style",styleColAcc); 
+    colorsP.appendChild(colBubAcc);
+
 
     const accCol=document.createElement("p");
     accCol.setAttribute("id","cardInfo");
