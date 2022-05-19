@@ -3,6 +3,7 @@
 import { makeUL } from "../common/list.mjs";
 import { anchorLink } from "../common/anchor.mjs";
 import { createLogoBox } from "../logo/logo.mjs";
+import { goToPage } from "../../utils/navigation.mjs";
 
 const createHeader = () => {
   //base
@@ -24,11 +25,13 @@ const createNavBox = () => {
 
   const nav = document.createElement("nav");
   const menu = makeUL(
-    anchorLink("Ceiling Fans", '/CeilingFans.html'),
-    anchorLink("Desk Fans", '/DeskFans.html'),
-    anchorLink("Handheld Fans", '/HandheldFans.html'),
-    anchorLink("Air Conditioning Fans", '/ACFans.html'),
-    anchorLink("Turbine Fans", '/TurbineFans.html')
+    anchorLink("Ceiling", goToPage.bind(this, "Ceiling Fans")),
+    anchorLink("Desk", goToPage.bind(this, "Desk Fans")),
+    anchorLink("Handheld", goToPage.bind(this, "Handheld Fans")),
+    anchorLink("Air Conditioning", goToPage.bind(this, "Air Conditioning Fans")),
+    anchorLink("Turbines", goToPage.bind(this, "Turbine Fans")),
+    anchorLink("PC Case", goToPage.bind(this, "Turbine Fans")),
+    anchorLink("Newsletter", goToPage.bind(this, "Turbine Fans"), '/assets/icons8-mail-24.png')
   );
 
   nav.appendChild(menu);

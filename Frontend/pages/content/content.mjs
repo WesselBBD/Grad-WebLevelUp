@@ -1,8 +1,8 @@
-import { createCard } from "/components/card/card.js";
-import { createButton } from "/components/button/button.js";
-import { createStars } from "/components/stars/stars.js";
-import { createHeader } from "/components/header/header.js";
-import { createFooter } from "/components/footer/footer.js";
+import { createCard } from "/components/card/card.mjs";
+import { createButton } from "/components/button/button.mjs";
+import { createStars } from "/components/stars/stars.mjs";
+import { createHeader } from "/components/header/header.mjs";
+import { createFooter } from "/components/footer/footer.mjs";
 
 const [header] = document.getElementsByTagName("header");
 header.append(...createHeader().children);
@@ -12,65 +12,34 @@ footer.append(... createFooter().children);
 
 const [main] = document.getElementsByTagName("main");
 
-const fanData = [
-    {
-        "FanName": "Helix Whirler",
-        "CatagoryName": "Turbine Fans",
-        "FanRPM": 3000,
-        "FanCFM": 200,
-        "FanImageURL": "/assets/imgs/fan-categories/CeilingFan1.png",
-        "BaseColour": {"MaterialBubbleHex": "x112233", "MaterialName": "Some Wood idk"},
-        "AccentColour": {"MaterialBubbleHex": "x332211", "MaterialName": "Some Neon idk"},
-    },
-    {
-        "FanName": "Benito Fanimation",
-        "CatagoryName": "Turbine Fans",
-        "FanRPM": 3000,
-        "FanCFM": 200,
-        "FanImageURL": "/assets/imgs/fan-categories/CeilingFan2.png",
-        "BaseColour": {"MaterialBubbleHex": "x112233", "MaterialName": "Some Wood idk"},
-        "AccentColour": {"MaterialBubbleHex": "x332211", "MaterialName": "Some Neon idk"},
-    },
-    {
-        "FanName": "Sunbeam",
-        "CatagoryName": "Turbine Fans",
-        "FanRPM": 3000,
-        "FanCFM": 200,
-        "FanImageURL": "/assets/imgs/fan-categories/CeilingFan3.png",
-        "BaseColour": {"MaterialBubbleHex": "x112233", "MaterialName": "Some Wood idk"},
-        "AccentColour": {"MaterialBubbleHex": "x332211", "MaterialName": "Some Neon idk"},
-    },
-    {
-        "FanName": "M.Black/457",
-        "CatagoryName": "Turbine Fans",
-        "FanRPM": 3000,
-        "FanCFM": 200,
-        "FanImageURL": "/assets/imgs/fan-categories/CeilingFan4.png",
-        "BaseColour": {"MaterialBubbleHex": "x112233", "MaterialName": "Some Wood idk"},
-        "AccentColour": {"MaterialBubbleHex": "x332211", "MaterialName": "Some Neon idk"},
-    },
-    {
-        "FanName": "Vindair",
-        "CatagoryName": "Turbine Fans",
-        "FanRPM": 3000,
-        "FanCFM": 200,
-        "FanImageURL": "/assets/imgs/fan-categories/CeilingFan5.png",
-        "BaseColour": {"MaterialBubbleHex": "x112233", "MaterialName": "Some Wood idk"},
-        "AccentColour": {"MaterialBubbleHex": "x332211", "MaterialName": "Some Neon idk"},
-    }
-]
+const host = "https://zkk9ts3etf.execute-api.af-south-1.amazonaws.com";
+const api = "/dev/api/fans?category=";
+
+let fanData = [];
 
 window.addEventListener("load", function() {
     getFans();
-    populatePageData();
+    //populatePageData();
 });
 
-const getFans = () => {
-    var params = new URLSearchParams(window.location.search),
-        fanCategory = params.get("fanCategory");
+const getFans = async () => {
+    let params = new URLSearchParams(window.location.search),
+        fanCategory = params.get("fanCategory").replace(' ', '+');
     console.log(fanCategory);
 
-    // TODO: make API call to get fans based on the fanCategory and assign to fanData
+    let route = host + api + fanCategory;
+
+    const header = {
+        method: "GET",
+        headers: {
+            'Accept': 'application/json',
+            'Host': host
+        }
+    }
+
+    const response = await fetch(route, header);
+    fanData = await response.json();
+    populatePageData();
 }
 
 // adds the sections, cards, and fan data to main container
@@ -114,6 +83,8 @@ const viewFan = (fan, card) => {
     fanCard.setAttribute("id", "selected")
     const stars = createStars(Math.round(Math.random() * 5));
     fanCard.appendChild(stars);
+
+    // card info
 
     // add frame
     const prevCard = document.getElementById("chosen");

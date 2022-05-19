@@ -6,10 +6,15 @@ const createLogoBox = (id) => {
   const logo = document.createElement("img");
   logo.setAttribute("src", "/assets/imgs/logo.svg");
   logo.classList.add("logo-img");
+  logo.onclick = goToHome;
 
   logoBox.appendChild(logo);
 
   return logoBox;
+}
+
+const goToHome = () => {
+  location.href = '/index.html';
 }
 
 export { createLogoBox };
