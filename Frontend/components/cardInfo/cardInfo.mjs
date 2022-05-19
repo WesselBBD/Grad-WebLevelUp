@@ -19,7 +19,7 @@ const createCardInfo = (fanData) => {
     
     const colorsP= document.createElement("p");
     colorsP.setAttribute("id","cardInfo");
-    let colText = document.createTextNode("\n"+"Base Colour: " + fanData.BaseColour.MaterialName);
+    let colText = document.createTextNode("\n"+"Base Colour: " + fanData.FanBaseColourName);
     
     detailsP.appendChild(dText);
     detailsP.appendChild(colText);
@@ -33,7 +33,7 @@ const createCardInfo = (fanData) => {
     const colBub=document.createElement("img");
     colBub.setAttribute("src","../../assets/imgs/star-temp.svg")
     colBub.setAttribute("id","colBubble");
-    let temp = fanData.BaseColour.MaterialBubbleHex.substring(1);
+    let temp = fanData.FanBaseColourHex;
     let styleCol= "color:#"+ temp
     colBub.setAttribute("style",styleCol); 
     colorsP.appendChild(colBub);
@@ -41,7 +41,7 @@ const createCardInfo = (fanData) => {
     const colBubAcc=document.createElement("img");
     colBubAcc.setAttribute("src","../../assets/imgs/star-temp.svg")
     colBubAcc.setAttribute("id","colBubble");
-    let tempAcc = fanData.AccentColour.MaterialBubbleHex.substring(1);
+    let tempAcc = fanData.FanAccentColourHex;
     let styleColAcc= "color:#"+ tempAcc
     colBubAcc.setAttribute("style",styleColAcc); 
     colorsP.appendChild(colBubAcc);
@@ -49,7 +49,7 @@ const createCardInfo = (fanData) => {
 
     const accCol=document.createElement("p");
     accCol.setAttribute("id","cardInfo");
-    let accText= document.createTextNode("\n" + "Accent Colour: " + fanData.AccentColour.MaterialName)
+    let accText= document.createTextNode("\n" + "Accent Colour: " + fanData.FanAccentColourName)
     accCol.appendChild(accText);
 
     detailsP.append(accCol);
