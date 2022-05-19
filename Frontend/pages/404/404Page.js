@@ -28,6 +28,12 @@ window.addEventListener("load", function() {
     const f=this.document.createTextNode("4");
     error.appendChild(f);
     rotateFanSection.appendChild(error);
+
+
+    const subtitle= this.document.createTextNode("It has hit the fan")
+    
+    main.appendChild(subtitle);
+
     main.appendChild(rotateFanSection);
 
 });
