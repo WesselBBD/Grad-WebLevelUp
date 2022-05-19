@@ -1,7 +1,9 @@
-const createCard = (cardImage, cardTitle , cardHeading = '', cardSubheading = '') => {
+const createCard = (cardGradient, cardImage, cardTitle , cardHeading = '', cardSubheading = '') => {
     const card = document.createElement("article");
     card.classList.add("card");
-    card.style.backgroundImage = "url('assets/imgs/fan-categories/" + cardImage + "')";
+    card.style.background = cardGradient + ", url('" + cardImage + "')";
+    card.style.backgroundSize = "cover";
+    card.style.backgroundPosition = "center";
     
     const title = document.createElement("h1");
     let titleText = document.createTextNode(cardTitle);

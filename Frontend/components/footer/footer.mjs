@@ -1,5 +1,5 @@
 // Creates Footer Component
-import { createLogoBox } from "../logo/logo.js";
+import { createLogoBox } from "../logo/logo.mjs";
 
 const createFooter = () => {
   const footer = document.createElement("footer");

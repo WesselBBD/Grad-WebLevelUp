@@ -1,0 +1,23 @@
+#fan{
+    
+   display: flex;
+   justify-content: center;
+
+    
+
+}
+
+#errorText{
+    font-size: 9.3rem;
+    font-weight: bolder;
+
+    width:33.75rem ;
+    height: 20.8rem;
+    top: 24.5rem;
+    left: 28rem;
+}
+
+
+#fanImg{
+    display: inline-block;
+}

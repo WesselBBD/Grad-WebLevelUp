@@ -1,4 +1,4 @@
-import { setAttributes } from "../../utils/helpers.js";
+import { setAttributes } from "../../utils/helpers.mjs";
 
 const createSlider = (
   title,

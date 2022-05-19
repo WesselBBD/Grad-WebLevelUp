@@ -7,7 +7,10 @@
 GET {{domain}}/api/fans
 
 ### 200 OK
-GET {{domain}}/api/fans/80D3215D-F761-46CC-A71B-06F5529C17DC
+GET {{domain}}/api/fans?category=Ceiling+Fans&rpm=300&cfm=4800&sweep=1750
 
-### 400 Bad Request
-GET {{domain}}/api/fans/234234
+### 200 OK - Empty array returned
+GET {{domain}}/api/fans?category=Ceiling+Fans&rpm=1&cfm=1&sweep=1
+
+### 400 Bad Request - Has to have all parameters
+GET {{domain}}/api/fans?category=Ceiling+Fans
