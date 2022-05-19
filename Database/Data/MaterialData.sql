@@ -14,4 +14,9 @@ VALUES 	(1, 'Cream White', x'fdfbec'),
 	(11, 'Peach Leather', x'fdb39b'),
 	(12, '60s Amber', x'f8d9a8'),
 	(13, 'Pinkstained Steel', x'a57e88'),
-	(14, 'Yellow Leather', x'f5aa7b');
+	(14, 'Yellow Leather', x'f5aa7b')
+	(15, 'Wood Brown', x'964b00'),
+	(16, 'Teal Plastic', x'800800'),
+	(17, 'Dark Grey Steel', x'a9a9a9'),
+	(18, 'Galvanized Steel', x'71797e'),
+	(19, 'Carbon Steel', x'cfd4d9');
