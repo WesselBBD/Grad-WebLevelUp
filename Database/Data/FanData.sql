@@ -32,7 +32,7 @@ VALUES	('Helix Whirler', 2, 160, 5234, 1450, '/assets/fans/Ceiling Fans/CeilingF
     ('PK-400', 6, 569, 1253, 2588, 'https://commons.wikimedia.org/wiki/File:Test.png', 6, 1),
     ('Malrovine', 6, 500, 3655, 4500, 'https://commons.wikimedia.org/wiki/File:Test.png', 9, 10),
     ('Vingate Standby', 5, 701, 2001, 5666, 'https://commons.wikimedia.org/wiki/File:Test.png', 2, 3),
-    ('Snaps Cooler', 5, 698, 9861, 1021, 'https://commons.wikimedia.org/wiki/File:Test.png', 2, 18),
+    ('Snaps Cooler', 5, 698, 9861, 1021, 'https://commons.wikimedia.org/wiki/File:Test.png', 2, 13),
     ('GT Obs', 4, 252, 1011, 3100, 'https://commons.wikimedia.org/wiki/File:Test.png', 5, 8),
     ('Interware DS', 5, 255, 3135, 2551, 'https://commons.wikimedia.org/wiki/File:Test.png', 5, 6),
     ('DP-250 Joint', 4, 150, 4000, 1512, 'https://commons.wikimedia.org/wiki/File:Test.png', 4, 1),
