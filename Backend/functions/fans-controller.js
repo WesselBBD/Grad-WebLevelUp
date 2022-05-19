@@ -1,7 +1,5 @@
 const db = require("../services/query-db");
-
-const badRequest = { statusCode: 400 };
-const serverError = { statusCode: 500 };
+const { badRequest, serverError } = require('./responses');
 
 const normalizeNaming = (data) =>
   data.map(({ "BIN_TO_UUID(`F`.`FanId`,true)": id, ...rest }) => ({

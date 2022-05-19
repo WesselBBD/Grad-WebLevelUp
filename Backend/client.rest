@@ -14,3 +14,13 @@ GET {{domain}}/api/fans?category=Ceiling+Fans&rpm=1&cfm=1&sweep=1
 
 ### 400 Bad Request - Has to have all parameters
 GET {{domain}}/api/fans?category=Ceiling+Fans
+
+### 200 OK
+POST {{domain}}/api/contact-details
+
+{
+  "name": "Diana",
+  "surname": "Prince",
+  "email": "dianaprince@gmail.com",
+  "category": "Case Fans"
+}
