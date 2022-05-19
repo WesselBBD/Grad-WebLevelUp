@@ -1,8 +1,9 @@
-import { createCard } from "/components/card/card.js";
-import { createButton } from "/components/button/button.js";
-import { createStars } from "/components/stars/stars.js";
-import { createHeader } from "/components/header/header.js";
-import { createFooter } from "/components/footer/footer.js";
+import { createCard } from "/components/card/card.mjs";
+import { createButton } from "/components/button/button.mjs";
+import { createStars } from "/components/stars/stars.mjs";
+import { createHeader } from "/components/header/header.mjs";
+import { createFooter } from "/components/footer/footer.mjs";
+import { createCardInfo  } from "/components/cardInfo/cardInfo.mjs";
 
 const [header] = document.getElementsByTagName("header");
 header.append(...createHeader().children);
@@ -123,6 +124,11 @@ const viewFan = (fan, card) => {
     card.setAttribute("id", "chosen");
 
     // add info component
+
+    const inf=createCardInfo(fan);
+    fanCard.appendChild(inf);
+
+
 
     selectedFanSection.appendChild(fanCard);
 
