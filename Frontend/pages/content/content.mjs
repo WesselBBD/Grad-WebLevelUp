@@ -48,17 +48,72 @@ const getFans = async () => {
         }
     }
 
-    const response = await fetch(route, header);
-    console.log(response.status);
-    fanData = await response.json();
-    
-    main.removeChild(main.firstChild);
+//    try {
+        const response = await fetch(route, header);
+        console.log(response.status);
+        fanData = await response.json();
+        
+        main.removeChild(main.firstChild);
 
-    populatePageData();
+        populatePageData();
+//    } catch (error) {
+        // add "oops try again here"
+//    }
+}
+
+const getMaxFanValues = () => {
+    fanData.reduce()
+}
+
+const getArgs = () => {
+    const url = new URL(window.location.href);
+    const rpm = url.searchParams.get('rpm');
+    const cfm = url.searchParams.get('cfm');
+    const span = url.searchParams.get('span');
+    return {rpm, cfm, span}
+}
+
+const MYSQL_SAFE_MAX_INT = 2147483647;
+
+const createRefreshFunction = (listSection) => () => {
+    let {rpm, cfm, span} = getArgs();
+    rpm ||= MYSQL_SAFE_MAX_INT;
+    cfm ||= MYSQL_SAFE_MAX_INT;
+    span ||= MYSQL_SAFE_MAX_INT;
+
+    const fanPredicate = (fan, index, arr) => {
+        let ret = true;
+        ret &&= (fan.FanRPM <= rpm)
+        ret &&= (fan.FanCFM <= cfm)
+        ret &&= (fan.FanSpanMM <= span)
+        return ret;
+    }
+
+    const createCards = (fan, index, arr) => {
+        const fanCard = createCard("linear-gradient(360deg, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.2) 100%)", fan.FanImageURL, fan.FanName);
+        const stars = createStars(fan.FanStars);
+        fanCard.appendChild(stars);
+        const viewBtn = createButton("View", viewFan.bind(this, fan, fanCard));
+        fanCard.appendChild(viewBtn);
+        listSection.appendChild(fanCard);
+    }
+
+    listSection.innerHTML = '';
+
+    fanData.filter(fanPredicate).forEach(createCards);
 }
 
 // adds the sections, cards, and fan data to main container
 const populatePageData = () => {
+    // fans section
+    const fanListSection = document.createElement("section");
+    fanListSection.setAttribute("id", "fanList");
+
+    const refreshCards = createRefreshFunction(fanListSection);
+
+    refreshCards(); //intialy drop all
+
+    //filters
     const filterSection = document.createElement("section");
     filterSection.setAttribute("id", "filters");
 
@@ -68,22 +123,49 @@ const populatePageData = () => {
     heading.classList.add("heading");
     filterSection.appendChild(heading);
 
+    let {rpm:rpmv, cfm:cfmv, span:spanv} = getArgs();
+    
+    //thats allot of items you got there... be a shame if some where to iterate over you list 6 times...
+    const rpmmx = Math.max(...fanData.map(fan => fan.FanRPM));
+    const cfmmx = Math.max(...fanData.map(fan => fan.FanCFM));
+    const spanmx = Math.max(...fanData.map(fan => fan.FanSpanMM));
+
+    const rpmmn = Math.min(...fanData.map(fan => fan.FanRPM));
+    const cfmmn = Math.min(...fanData.map(fan => fan.FanCFM));
+    const spanmn = Math.min(...fanData.map(fan => fan.FanSpanMM));
+    //
+
+    const rpms = ~~((rpmmx-rpmmn) / 15);
+    const cfms = ~~((cfmmx-cfmmn) / 15);
+    const spans = ~~((spanmx-spanmn) / 15);
+
+    rpmv ||= rpmmx;
+    cfmv ||= cfmmx;
+    spanv ||= spanmx;
+
     const rpmSlider = createSlider("RPM", {
-        initialValue: 6500,
-        max: 6500,
-        step: 15,
+        initialValue: rpmv,
+        max: rpmmx + rpms,
+        min: rpmmn,
+        step: rpms,
+        onChange: refreshCards,
     });
     rpmSlider.setAttribute("id", "rpm");
 
     const cfmSlider = createSlider("CFM", {
-        initialValue: 300,
-        max: 300,
-        step: 1,
+        initialValue: cfmv,
+        max: cfmmx + cfms,
+        min: cfmmn,
+        step: cfms,
+        onChange: refreshCards,
     });
     const spanSlider = createSlider("Blade Span (mm)", {
-        initialValue: 10000,
-        max: 10000,
-        step: 50,
+        initialValue: spanv,
+        max: spanmx + spans,
+        min: spanmn,
+        step: spans,
+        arg: 'span',
+        onChange: refreshCards,
     });
       
     filterSection.appendChild(rpmSlider);
@@ -99,19 +181,6 @@ const populatePageData = () => {
     const pickAFanCard = createCard("linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 40%)", "/assets/imgs/fan-categories/DeskFanDisplay.png", "Pick a fan", "any fan");
     pickAFanCard.setAttribute("id", "pick-a-fan");
     selectedFanSection.appendChild(pickAFanCard);
-
-    // fans section
-    const fanListSection = document.createElement("section");
-    fanListSection.setAttribute("id", "fanList");
-
-    fanData.forEach(fan => {
-        const fanCard = createCard("linear-gradient(360deg, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.2) 100%)", fan.FanImageURL, fan.FanName);
-        const stars = createStars(fan.FanStars);
-        fanCard.appendChild(stars);
-        const viewBtn = createButton("View", viewFan.bind(this, fan, fanCard));
-        fanCard.appendChild(viewBtn);
-        fanListSection.appendChild(fanCard);
-    });
 
     // append to main
     fansSection.appendChild(selectedFanSection);

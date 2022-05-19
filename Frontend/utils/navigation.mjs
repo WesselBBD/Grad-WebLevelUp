@@ -1,12 +1,21 @@
 export const goToPage = (fanCategory) => {
-    var params = new URLSearchParams();
+    const params = new URLSearchParams();
     params.append("fanCategory", fanCategory);
 
-    var pageURL = "/pages/content/content.html?" + params.toString();
+    const pageURL = "/pages/content/content.html?" + params.toString();
     location.href = pageURL;
 }
 
 export const goTo404 = () => {
-    var pageURL = "/pages/404/404Page.html"
+    const pageURL = "/404Page.html"
     location.href = pageURL;
+}
+
+export const addArg = (arg, value) => {
+    const url = new URL(window.location.href);
+    const params = url.searchParams;
+
+    params.set(arg.toLocaleLowerCase(), value);
+
+    window.history.replaceState(null, null, url);
 }

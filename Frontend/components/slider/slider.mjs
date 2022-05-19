@@ -1,8 +1,9 @@
 import { setAttributes } from "../../utils/helpers.mjs";
+import { addArg } from "../../utils/navigation.mjs";
 
 const createSlider = (
   title,
-  { initialValue = 0, min = 0, max = 100, step = 10, onInput = () => {} } = {}
+  { initialValue = 0, min = 0, max = 100, step = 10, arg = title, onInput = () => {}, onChange = () => {} } = {}
 ) => {
   const sliderBox = document.createElement("section");
   sliderBox.classList.add("slider-box");
@@ -23,13 +24,18 @@ const createSlider = (
     min,
     max,
     step,
-    value: initialValue,
+    value: initialValue
   });
 
   input.oninput = (event) => {
     mark.innerText = event.target.value;
     onInput(event.target.value);
   };
+
+  input.addEventListener('change', function (ev) {
+    addArg(arg, this.value);
+    onChange();
+  });
 
   sliderBox.appendChild(label);
   sliderBox.appendChild(input);
