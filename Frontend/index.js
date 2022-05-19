@@ -37,7 +37,7 @@ window.addEventListener("load", function () {
 
   body.appendChild(card);
   body.appendChild(card1);
-  createGlass(document.getElementById('fotw'));
+  createGlass(card1);
   main.appendChild(card);
   main.appendChild(card1);
 });

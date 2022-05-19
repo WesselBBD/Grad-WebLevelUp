@@ -1,8 +1,8 @@
 import { createStars } from "../stars/stars.js";
 
-const createGlass = (cardID,qfunc=0) => {
+const createGlass = (card) => {
     const glass = document.createElement("article");
-    const card = document.getElementById(cardID);
+    //const card = document.getElementById(cardID);
     card.prepend(glass)
     glass.classList.add("glass");
     glass.style.backgroundImage = card.style.backgroundImage
