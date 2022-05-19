@@ -15,7 +15,7 @@ BEGIN
       SELECT BIN_ID = UUID_TO_BIN(ID);
  
       SELECT *
-      FROM `vFullFans` AS `F` 
+      FROM `Fan` AS `F` 
       WHERE `F`.`FanId` = BIN_ID;
     END;
   END IF;
@@ -25,7 +25,7 @@ DELIMITER //
 CREATE PROCEDURE `pGetFansByMaxRPM` (IN RPM INT)
 BEGIN
   SELECT *
-  FROM `Fan` AS `F` 
+  FROM `vFullFans` AS `F` 
   WHERE `F`.`FanRPM` <= RPM;
 END//
 
@@ -33,7 +33,7 @@ DELIMITER //
 CREATE PROCEDURE `pGetFansByMaxCFM` (IN CFM INT)
 BEGIN
   SELECT *
-  FROM `Fan` AS `F` 
+  FROM `vFullFans` AS `F` 
   WHERE `F`.`FanCFM` <= CFM;
 END//
 
@@ -41,7 +41,7 @@ DELIMITER //
 CREATE PROCEDURE `pGetFansByMaxSpan` (IN SPAN INT)
 BEGIN
   SELECT *
-  FROM `Fan` AS `F` 
+  FROM `vFullFans` AS `F` 
   WHERE `F`.`FanSpanMM` <= SPAN;
 END//
 

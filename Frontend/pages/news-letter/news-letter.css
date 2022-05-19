@@ -75,11 +75,26 @@ form input[type="checkbox"]:checked {
 }
 
 form input[type="submit"] {
-  width: 6rem;
   padding: 0.5rem;
   text-transform: uppercase;
   margin: auto;
   background: var(--turquoise);
   color: white;
   margin-top: 2rem;
+  font-size: 1.5rem;
+  border: 0;
+}
+
+form input[type="submit"]:hover {
+	background-color:#476e9e;
+	cursor: pointer;
+	transition: 0.5s;
+}
+
+.cross-form label {
+  font-weight: normal;
+}
+
+#name, #surname, #email {
+  font-size: 1.5rem;
 }

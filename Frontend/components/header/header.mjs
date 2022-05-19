@@ -30,7 +30,7 @@ const createNavBox = () => {
     anchorLink("Handheld", goToPage.bind(this, "Handheld Fans")),
     anchorLink("Air Conditioning", goToPage.bind(this, "Air Conditioning Fans")),
     anchorLink("Turbines", goToPage.bind(this, "Turbine Fans")),
-    anchorLink("PC Case", goToPage.bind(this, "Turbine Fans")),
+    anchorLink("PC Case", goToPage.bind(this, "Case Fans")),
     anchorLink("Newsletter", () => window.location.href = '/pages/news-letter/news-letter.html', '/assets/icons8-mail-24.png')
   );
 
