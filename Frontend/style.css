@@ -20,6 +20,10 @@ a {
 body {
   margin: 0;
   background-color: var(--bg-primary);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
 }
 
 main {

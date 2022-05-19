@@ -1,0 +1,38 @@
+#news-letter-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 75vh;
+}
+
+#news-letter-main img {
+  height: 10rem;
+}
+
+#news-letter-main h2 {
+  font-size: 6.5rem;
+  margin: 0;
+}
+
+#news-letter-main h3 {
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+#form {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+#form input {
+  border: 2px solid var(--turquoise);
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+#form input:focus {
+  outline: none;
+  border: 2px solid var(--turquoise);
+  box-shadow: 0 0px 4px 1px var(--grey);
+}
