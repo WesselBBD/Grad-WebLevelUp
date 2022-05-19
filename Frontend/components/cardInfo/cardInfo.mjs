@@ -19,7 +19,7 @@ const createCardInfo = (fanData) => {
     
     const colorsP= document.createElement("p");
     colorsP.setAttribute("id","cardInfo");
-    let colText = document.createTextNode("\n"+"Base Colour: ");
+    let colText = document.createTextNode("\n"+"Base Colour: " + fanData.BaseColour.MaterialName);
     
     detailsP.appendChild(dText);
     detailsP.appendChild(colText);
@@ -39,7 +39,12 @@ const createCardInfo = (fanData) => {
     colorsP.appendChild(colBub);
 
 
-   
+    const accCol=document.createElement("p");
+    accCol.setAttribute("id","cardInfo");
+    let accText= document.createTextNode("\n" + "Accent Colour: " + fanData.AccentColour.MaterialName)
+    accCol.appendChild(accText);
+
+    detailsP.append(accCol);
 
 
     cardInfo.appendChild(detailsP);
