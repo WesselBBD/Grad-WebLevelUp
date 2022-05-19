@@ -1,4 +1,3 @@
-
 const createCard = (cardGradient, cardImage, cardTitle , cardHeading = '', cardSubheading = '') => {
     const card = document.createElement("article");
     card.classList.add("card");
@@ -6,12 +5,12 @@ const createCard = (cardGradient, cardImage, cardTitle , cardHeading = '', cardS
     card.style.backgroundSize = "cover";
     card.style.backgroundPosition = "center";
 
-    
+
     const title = document.createElement("h1");
     title.classList.add("title")
     let titleText = document.createTextNode(cardTitle);
     title.appendChild(titleText);
-    
+
     card.appendChild(title);
 
     if (cardHeading != '') {
@@ -30,7 +29,14 @@ const createCard = (cardGradient, cardImage, cardTitle , cardHeading = '', cardS
         card.appendChild(subheading);
     }
 
-    return card;
+  if (cardSubheading != "") {
+    const subheading = document.createElement("h3");
+    let subheadingText = document.createTextNode(cardSubheading);
+    subheading.appendChild(subheadingText);
+    card.appendChild(subheading);
+  }
+
+  return card;
 };
 
 export { createCard };

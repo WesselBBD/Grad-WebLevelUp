@@ -6,17 +6,17 @@
 }
 
 .card h1 {
-    color: white;
-    font-size: 2rem;
-    font-weight: 700;
-    margin: 0.5rem 0;
+  color: white;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0.5rem 0;
 }
 
 .card h2 {
-    color: white;
-    font-size: 1.25rem;
-    font-weight: 300;
-    margin: 0.5rem 0;
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 300;
+  margin: 0.5rem 0;
 }
 
 .card h3 {
@@ -27,8 +27,6 @@
 }
 
 #cardInfo{
-
-    /* text-align: right; */
     font-weight: bold;
     white-space: pre;
 
