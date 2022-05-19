@@ -25,3 +25,15 @@
     font-weight: 300;
     margin: 0.5rem 0;
 }
+
+#cardInfo{
+
+    /* text-align: right; */
+    font-weight: bold;
+    white-space: pre;
+
+}
+
+#colBubble{
+    width: 40pt;
+}
