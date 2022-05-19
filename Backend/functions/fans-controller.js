@@ -1,7 +1,5 @@
 const db = require("../services/query-db");
-
-const badRequest = { statusCode: 400 };
-const serverError = { statusCode: 500 };
+const { badRequest, serverError } = require("./responses");
 
 const normalizeNaming = (data) =>
   data.map(({ "BIN_TO_UUID(`F`.`FanId`,true)": id, ...rest }) => ({
@@ -9,15 +7,17 @@ const normalizeNaming = (data) =>
     ...rest,
   }));
 
-const filterFans = async ({ category, rpm, cfm, sweep }) => {
+const filterFans = async ({ category }) => {
   try {
-    const [data] = await db.query(
-      `CALL pGetFansByAtributes(${rpm}, ${cfm}, ${sweep}, '${category}');`
-    );
+    const [data] = await db.query(`CALL pGetFansByCategory('${category}');`);
     const response = normalizeNaming(data);
 
     return {
       statusCode: 200,
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Credentials': true,
+      },
       body: JSON.stringify(response),
     };
   } catch (error) {
@@ -33,6 +33,10 @@ const getFans = async (event) => {
 
       return {
         statusCode: 200,
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Credentials': true,
+        },
         body: JSON.stringify(response),
       };
     } catch (error) {
@@ -40,18 +44,13 @@ const getFans = async (event) => {
     }
   }
 
-  const { category, rpm, cfm, sweep } = event.queryStringParameters;
+  const { category } = event.queryStringParameters;
 
-  if (
-    category === undefined ||
-    rpm === undefined ||
-    cfm === undefined ||
-    sweep === undefined
-  ) {
+  if (category === undefined) {
     return badRequest;
   }
 
-  return filterFans({ category, rpm, cfm, sweep });
+  return filterFans({ category });
 };
 
 module.exports = { getFans };

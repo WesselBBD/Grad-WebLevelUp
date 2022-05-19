@@ -1,17 +1,22 @@
 import { goTo404, goToPage } from "./utils/navigation.mjs";
+import { goToPage } from "./utils/navigation.js";
+import { createStars } from "./components/stars/stars.mjs";
 import { createCard } from "./components/card/card.mjs";
 import { createButton } from "./components/button/button.mjs";
 import { createHeader } from "./components/header/header.mjs";
 import { createFooter } from "./components/footer/footer.mjs";
+import { createBanner } from "./components/banner/banner.mjs";
 
 
 const [header] = document.getElementsByTagName("header");
 header.append(...createHeader().children);
 
 const [footer] = document.getElementsByTagName("footer");
+
 footer.append(... createFooter().children);
 
 const [main] = document.getElementsByTagName("main");
+const [banners] = document.getElementsByTagName("banner");
 
 window.addEventListener("load", function() {
   populatePageData();
@@ -99,3 +104,4 @@ const populatePageData = () => {
   main.appendChild(heading);
   main.appendChild(exploreSection);
 }
+

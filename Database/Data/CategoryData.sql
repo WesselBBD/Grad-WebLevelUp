@@ -1,8 +1,10 @@
 USE `OnlyFansDB`;
 
 INSERT INTO `Category` (`CategoryId`, `CategoryName`)
-VALUES 	(1, 'Ceiling Fans'),
-        (2, 'Desk Fans'),
-        (3, 'Handheld Fans'),
-        (4, 'Air Conditioning'),
-        (5, 'Turbine Fans');
+VALUES  (1, 'ALL'),
+        (2, 'Ceiling Fans'),
+        (3, 'Desk Fans'),
+        (4, 'Handheld Fans'),
+        (5, 'Air Conditioning Fans'),
+        (6, 'Case Fans'),
+        (7, 'Turbine Fans');

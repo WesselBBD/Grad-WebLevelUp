@@ -28,5 +28,15 @@ functions:
           path: api/fans
           method: get
           cors: true
+  Newsletter:
+    name: ${self:service}-newsletter-post
+    handler: functions/letter-controller.postContactDetails
+    memorySize: 128
+    events:
+      - http:
+          path: api/contact-details
+          method: post
+          cors: true
+
 plugins:
   - serverless-offline

@@ -1,0 +1,58 @@
+.glass {
+    height: 20rem;
+    width: 30rem;
+    text-align: right;
+    letter-spacing: -0.02rem;
+    padding: 1rem;
+    margin: -1rem;
+    background: linear-gradient(270deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 60%), url("assets/images/categories/ceiling.jpg");
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);	
+	border-radius: 5px;
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+    border-radius: 0.8rem;
+    filter: drop-shadow(0rem 0.5rem 0.625rem rgba(0, 0, 0, 0.1));
+    top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.glass::before{
+
+    content: "";
+	position: absolute;
+	background: inherit;
+	z-index: -1;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	box-shadow: inset 0 0 2000px rgba(0, 0, 0, 0.5);
+	filter: blur(5px);
+	
+}
+.glass h1 {
+    color: white;
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0.5rem 0;
+    z-index: 2;
+}
+
+.glass h2 {
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 300;
+    margin: 0.5rem 0;
+}
+
+.glass h3 {
+    color: white;
+    font-size: 1rem;
+    font-weight: 300;
+    margin: 0.5rem 0;
+}

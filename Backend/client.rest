@@ -7,10 +7,20 @@
 GET {{domain}}/api/fans
 
 ### 200 OK
-GET {{domain}}/api/fans?category=Ceiling+Fans&rpm=300&cfm=4800&sweep=1750
+GET {{domain}}/api/fans?category=Ceiling+Fans
 
 ### 200 OK - Empty array returned
-GET {{domain}}/api/fans?category=Ceiling+Fans&rpm=1&cfm=1&sweep=1
-
-### 400 Bad Request - Has to have all parameters
 GET {{domain}}/api/fans?category=Ceiling+Fans
+
+### 200 OK
+GET {{domain}}/api/fans?category=Ceiling+Fans
+
+### 200 OK
+POST {{domain}}/api/contact-details
+
+{
+  "name": "Diana",
+  "surname": "Prince",
+  "email": "dianaprince@gmail.com",
+  "categoryId": "2"
+}

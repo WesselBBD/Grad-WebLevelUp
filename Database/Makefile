@@ -4,6 +4,7 @@ build:
 	@cat Tables/CreateCategoryTable.sql >> Complete.sql
 	@cat Tables/CreateMaterial.sql >> Complete.sql
 	@cat Tables/CreateFanTable.sql >> Complete.sql
+	@cat Tables/CreateUserTable.sql >> Complete.sql
 	@cat Tables/ForeignKeys.sql >> Complete.sql
 
 	@cat Views/vFullFans.sql >> Complete.sql
