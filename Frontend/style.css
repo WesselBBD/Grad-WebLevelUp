@@ -28,16 +28,6 @@ body {
 
 main {
   width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-main {
-  width: 100%;
-  display: flex;
-  box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.5);
-  -webkit-box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.5);
 }
 
 header,
@@ -52,4 +42,24 @@ footer {
   padding-right: 32px;
   padding-top: 16px;
   padding-bottom: 16px;
+}
+
+.filter-container {
+  width: 100%;
+  display: flex;
+  padding: 1rem 0 1rem;
+}
+
+.content-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.content-container section.left {
+  width: 46%;
+}
+
+.content-container section.right {
+  width: 46%;
 }
