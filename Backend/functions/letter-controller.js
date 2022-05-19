@@ -8,13 +8,13 @@ const postContactDetails = async (event) => {
     return badRequest;
   }
 
-  const { name, surname, email, category } = body;
+  const { name, surname, email, categoryId } = body;
 
-  if (!name || !surname || !email || !category) {
+  if (!name || !surname || !email || !categoryId) {
     return badRequest;
   }
 
-  // db.query(`INSERT INTO NewsLetter (name, surname, email, category) VALUES ('${name}', '${surname}', '${email}', '${category})'`);
+  db.query(`INSERT INTO User (UserName, UserEmail, CategoryId) VALUES ('${name} ${surname}', '${surname}', '${categoryId}');`)
 
   return {
     statusCode: 200,
