@@ -29,13 +29,6 @@ const createCard = (cardGradient, cardImage, cardTitle , cardHeading = '', cardS
         card.appendChild(subheading);
     }
 
-  if (cardSubheading != "") {
-    const subheading = document.createElement("h3");
-    let subheadingText = document.createTextNode(cardSubheading);
-    subheading.appendChild(subheadingText);
-    card.appendChild(subheading);
-  }
-
   return card;
 };
 
