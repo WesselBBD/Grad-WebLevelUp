@@ -1,5 +1,5 @@
-import { createHeader } from "../../components/header/header.mjs";
-import { createFooter } from "../../components/footer/footer.mjs";
+import { createHeader } from "/components/header/header.mjs";
+import { createFooter } from "/components/footer/footer.mjs";
 
 
 
