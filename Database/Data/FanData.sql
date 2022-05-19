@@ -12,14 +12,14 @@ VALUES	('Helix Whirler', 2, 160, 5234, 1450, '/assets/fans/Ceiling Fans/CeilingF
 	('Tubelet V2', 3, 432, 2452, 231, '/assets/fans/Desk Fans/DeskFan3.png', 5, 6, 42),
 	('Old Timer A19', 3, 800, 2999, 269, '/assets/fans/Desk Fans/DeskFan4.png', 3, 25, 25),
 	('"Little One" Desk Fan', 3, 230, 1843, 224, '/assets/fans/Desk Fans/DeskFan5.png', 2, 6, 6),
-	('WhtTsh 350', 3, 250, 1530, 280, '/assets/fans/Desk Fans/DeskFan6.png', 1, 43, 43),
+	('Salmon Fury   ', 3, 250, 1530, 280, '/assets/fans/Desk Fans/DeskFan6.png', 1, 43, 43),
 
-	('Mini Venit', 4, 160, 370, 150, '/assets/fans/Handheld Fans/Handheld1.png', 4, 6, 20),
+	('Lucky‘s Blaster', 4, 160, 370, 150, '/assets/fans/Handheld Fans/Handheld1.png', 4, 6, 20),
     ('Supa‘ Fast Cooler', 4, 200, 369, 169, '/assets/fans/Handheld Fans/Handheld2.png', 5, 21, 20),
     ('Pircrote', 4, 170, 368, 131, '/assets/fans/Handheld Fans/Handheld3.png', 3, 22, 9),
     ('DP-200 Joint', 4, 298, 369, 160, '/assets/fans/Handheld Fans/Handheld4.png', 2, 23, 24),
-    ('Numlock', 4, 125, 420, 145, '/assets/fans/Handheld Fans/Handheld5.png', 4, 25, 14),
-    ('Meta CN', 4, 201, 326, 190, '/assets/fans/Handheld Fans/Handheld6.png', 5, 26, 27),
+    ('Cardinal Sin', 4, 125, 420, 145, '/assets/fans/Handheld Fans/Handheld5.png', 4, 25, 14),
+    ('The Bukkit', 4, 201, 326, 190, '/assets/fans/Handheld Fans/Handheld6.png', 5, 26, 27),
 
     ('Bridge Nate', 5, 536, 4598, 999, '/assets/fans/Aircon Fans/Aircon1.png', 5, 28, 28),
     ('VB-800', 5, 538, 4700, 857, '/assets/fans/Aircon Fans/Aircon2.png', 4, 29, 29),
@@ -29,10 +29,10 @@ VALUES	('Helix Whirler', 2, 160, 5234, 1450, '/assets/fans/Ceiling Fans/CeilingF
     ('PC-RT FG-50', 5, 456, 4598, 943, '/assets/fans/Aircon Fans/Aircon6.png', 4, 33, 33),
 
     ('TechNine', 6, 499, 4511, 8000, '/assets/fans/Case Fans/CaseFans1.png', 3, 35, 35),
-    ('Dent GT', 6, 879, 3256, 3690, '/assets/fans/Case Fans/CaseFans2.png', 5, 35, 24),
-    ('Zero Power', 6, 231, 1569, 2500, '/assets/fans/Case Fans/CaseFans3.png', 3, 36, 8),
-    ('Tech VP-900', 6, 123, 3200, 1477, '/assets/fans/Case Fans/CaseFans4.png', 4, 34, 34),
-    ('Silver Inn', 6, 328, 4789, 8947, '/assets/fans/Case Fans/CaseFans5.png', 5, 34, 34),
+    ('AZZA FAN INNIT', 6, 879, 3256, 3690, '/assets/fans/Case Fans/CaseFans2.png', 5, 35, 24),
+    ('Titanium White Power', 6, 231, 1569, 2500, '/assets/fans/Case Fans/CaseFans3.png', 3, 36, 8),
+    ('V3SP3R', 6, 123, 3200, 1477, '/assets/fans/Case Fans/CaseFans4.png', 4, 34, 34),
+    ('The BFF', 6, 328, 4789, 8947, '/assets/fans/Case Fans/CaseFans5.png', 5, 34, 34),
 
     ('PK-400', 7, 20000, 30015, 3689, '/assets/fans/Turbine Fans/Turbine1.png', 4, 37, 37),
     ('Malrovine', 7, 22098, 35001, 3246, '/assets/fans/Turbine Fans/Turbine2.png', 5, 37, 38),
