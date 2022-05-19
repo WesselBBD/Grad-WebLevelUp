@@ -4,6 +4,7 @@ import { createStars } from "/components/stars/stars.mjs";
 import { createHeader } from "/components/header/header.mjs";
 import { createFooter } from "/components/footer/footer.mjs";
 import { createCardInfo  } from "/components/cardInfo/cardInfo.mjs";
+import { createSlider } from "/components/slider/slider.mjs";
 
 const [header] = document.getElementsByTagName("header");
 header.append(...createHeader().children);
@@ -20,7 +21,16 @@ let fanData = [];
 
 window.addEventListener("load", function() {
     getFans();
-    //populatePageData();
+    
+    const loading = document.createElement("section");
+    loading.setAttribute("id", "loading");
+
+    const fanImg= this.document.createElement("img");
+    fanImg.setAttribute("src","/assets/imgs/icon-ani.svg");
+    fanImg.setAttribute("id","fanImg");
+    loading.appendChild(fanImg);
+
+    main.appendChild(loading);
 });
 
 const getFans = async () => {
@@ -39,12 +49,47 @@ const getFans = async () => {
     }
 
     const response = await fetch(route, header);
+    console.log(response.status);
     fanData = await response.json();
+    
+    main.removeChild(main.firstChild);
+
     populatePageData();
 }
 
 // adds the sections, cards, and fan data to main container
 const populatePageData = () => {
+    const filterSection = document.createElement("section");
+    filterSection.setAttribute("id", "filters");
+
+    const heading = document.createElement("h1");
+    let headingText = document.createTextNode("Filters");
+    heading.appendChild(headingText);
+    heading.classList.add("heading");
+    filterSection.appendChild(heading);
+
+    const rpmSlider = createSlider("RPM", {
+        initialValue: 6500,
+        max: 6500,
+        step: 15,
+    });
+    rpmSlider.setAttribute("id", "rpm");
+
+    const cfmSlider = createSlider("CFM", {
+        initialValue: 300,
+        max: 300,
+        step: 1,
+    });
+    const spanSlider = createSlider("Blade Span (mm)", {
+        initialValue: 10000,
+        max: 10000,
+        step: 50,
+    });
+      
+    filterSection.appendChild(rpmSlider);
+    filterSection.appendChild(cfmSlider);
+    filterSection.appendChild(spanSlider);
+
     const fansSection = document.createElement("section");
     fansSection.setAttribute("id", "fans");
 
@@ -61,7 +106,7 @@ const populatePageData = () => {
 
     fanData.forEach(fan => {
         const fanCard = createCard("linear-gradient(360deg, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.2) 100%)", fan.FanImageURL, fan.FanName);
-        const stars = createStars(Math.round(Math.random() * 5));
+        const stars = createStars(fan.FanStars);
         fanCard.appendChild(stars);
         const viewBtn = createButton("View", viewFan.bind(this, fan, fanCard));
         fanCard.appendChild(viewBtn);
@@ -71,6 +116,7 @@ const populatePageData = () => {
     // append to main
     fansSection.appendChild(selectedFanSection);
     fansSection.appendChild(fanListSection);
+    main.appendChild(filterSection);
     main.appendChild(fansSection);
 }
 
@@ -80,9 +126,9 @@ const viewFan = (fan, card) => {
     const selectedFanSection = document.getElementById("selectedFan");
     selectedFanSection.removeChild(selectedFanSection.firstElementChild);
 
-    const fanCard = createCard("linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 30%)", fan.FanImageURL, fan.FanName);
+    const fanCard = createCard("linear-gradient(180deg, rgba(0, 0, 0, 0.7) 25%, rgba(0, 0, 0, 0) 100%)", fan.FanImageURL, fan.FanName);
     fanCard.setAttribute("id", "selected")
-    const stars = createStars(Math.round(Math.random() * 5));
+    const stars = createStars(fan.FanStars);
     fanCard.appendChild(stars);
 
     // card info

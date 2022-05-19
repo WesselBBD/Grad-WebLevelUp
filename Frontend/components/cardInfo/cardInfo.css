@@ -2,5 +2,16 @@
 
     /* text-align: right; */
     font-weight: bolder;
+    color: var(--dark-blue);
+}
 
+#colBubble {
+    background-color: rebeccapurple;
+}
+
+li::marker 
+{
+    font-size: 5rem;
+    font-weight: bolder;
+    color: hotpink !important;
 }
