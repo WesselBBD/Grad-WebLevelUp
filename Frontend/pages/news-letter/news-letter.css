@@ -1,0 +1,100 @@
+#news-letter-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  width: auto;
+  padding: 2rem;
+}
+
+#news-letter-main img {
+  height: 10rem;
+}
+
+#news-letter-main h2 {
+  font-size: 6.5rem;
+  margin: 0;
+  color: var(--dark);
+}
+
+#news-letter-main h3 {
+  font-size: 3rem;
+  font-weight: 500;
+  color: var(--dark);
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+form {
+  display: grid;
+  grid-template-columns: auto auto;
+
+  width: 75%;
+  gap: 1rem 10%;
+}
+
+form label {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+form input {
+  border: 2px solid var(--turquoise);
+  border-radius: 4px;
+  font-weight: 500;
+  padding: 0.3rem;
+}
+
+form input:focus {
+  outline: none;
+  border: 2px solid var(--turquoise);
+  box-shadow: 0 0px 4px 1px var(--grey);
+}
+
+form .cross-form {
+  grid-column: span 2;
+}
+
+form input[type="checkbox"] {
+  -webkit-appearance: none;
+  background: transparent;
+  border: 2px solid var(--turquoise);
+  width: 0.9rem;
+  height: 0.9rem;
+}
+
+form input[type="checkbox"]:checked {
+  background: var(--turquoise);
+}
+
+form input[type="submit"] {
+  padding: 0.5rem;
+  text-transform: uppercase;
+  margin: auto;
+  background: var(--turquoise);
+  color: white;
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  border: 0;
+}
+
+form input[type="submit"]:hover {
+	background-color:#476e9e;
+	cursor: pointer;
+	transition: 0.5s;
+}
+
+.cross-form label {
+  font-weight: normal;
+}
+
+#name, #surname, #email {
+  font-size: 1.5rem;
+}

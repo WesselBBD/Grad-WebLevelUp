@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@import "components/slider/slider.css?v=2";
+@import "components/stars/stars.css?v=2";
+@import "components/card/card.css?v=2";
+@import "components/button/button.css?v=2";
+@import "components/header/header.css?v=2";
+@import "components/footer/footer.css?v=2";
+@import "components/banner/banner.css?v=2";
+@import "components/glass/glass.css?v=2";
+@import "colours.css?v=2";
+
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header,
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f7f8f9;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+body {
+  background-color: var(--bg-primary);
+}
+
+.filter-container {
+  width: 100%;
+  display: flex;
+}
+
+.content-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.content-container section.left {
+  width: 46%;
+}
+
+.content-container section.right {
+  width: 46%;
+}
+
+.logo-img {
+  cursor: pointer;
+}
+
+#email-icon {
+  display: inline;
+  float: left;
+  position: relative;
+  margin-top: 0.15rem;
+  margin-left: 2rem;
+  margin-right: 0.25rem;
+}

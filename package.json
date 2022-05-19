@@ -1,0 +1,20 @@
+{
+  "name": "only-fans-web-level-up",
+  "version": "1.0.0",
+  "description": "Cooling devices wiki",
+  "main": "index.js",
+  "scripts": {
+    "install:backend": "cd Backend && npm i",
+    "start:backend": "cd Backend && npm run start:offline"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WesselBBD/Grad-WebLevelUp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WesselBBD/Grad-WebLevelUp/issues"
+  },
+  "homepage": "https://github.com/WesselBBD/Grad-WebLevelUp#readme"
+}

@@ -1,0 +1,83 @@
+.slider-box {
+  width: 25%;
+  display: inline-block;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+
+.slider-box label {
+  margin-bottom: 1%;
+  font-size: 1rem;
+  padding: 1rem;
+}
+
+.slider-box input[type="range"] {
+  overflow: hidden;
+  -webkit-appearance: none;
+  border-radius: 1rem;
+  width: 100%;
+}
+
+.slider-box input[type="range"]::-webkit-slider-runnable-track {
+  height: 2rem;
+  -webkit-appearance: none;
+  cursor: pointer;
+  background: transparent;
+  background-color: var(--bg-secondary);
+  border-radius: 1rem;
+}
+
+/* Chrome, Safari */
+.slider-box input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 100%;
+  width: 2rem;
+  border-radius: 1rem;
+
+  background-image: url("../../assets/imgs/icon-ani.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  box-shadow: -1000px 0 0 calc(1000px - 1rem) var(--turquoise),
+    inset 0px 0px 0px 2px var(--turquoise);
+}
+
+/* Edge, IE */
+.slider-box input[type="range"]::-ms-thumb {
+  -webkit-appearance: none;
+  height: 100%;
+  width: 2rem;
+  border-radius: 1rem;
+
+  background-image: url("../../assets/imgs/icon-ani.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  box-shadow: -1000px 0 0 calc(1000px - 1rem) var(--turquoise),
+    inset 0px 0px 0px 2px var(--turquoise);
+}
+
+/* Firefox */
+.slider-box input[type="range"]::-moz-range-thumb {
+  -webkit-appearance: none;
+  height: 100%;
+  width: 2rem;
+  border-radius: 1rem;
+
+  background-image: url("../../assets/imgs/icon-ani.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  box-shadow: -1000px 0 0 calc(1000px - 1rem) var(--turquoise),
+    inset 0px 0px 0px 2px var(--turquoise);
+}
+
+.slider-box label {
+  font-weight: bold;
+}
+
+.slider-box label mark {
+  padding-left: 1%;
+  padding-right: 1%;
+  background: var(--slider-mark);
+}

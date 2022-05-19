@@ -1,0 +1,19 @@
+.button {
+	background-color: var(--btn-primary);
+	border-radius: 0.4rem;
+	border: none;
+	color:#ffffff;
+	padding: 0.875rem 1.25rem;
+	margin-top: 0.5rem;
+	text-decoration: none;
+	text-transform: uppercase;
+    box-shadow: 0rem 0.5rem 0.625rem rgba(0, 0, 0, 0.1);
+}
+.button:hover {
+	background-color:#476e9e;
+	cursor: pointer;
+	transition: 0.5s;
+}
+.button:active {
+	top:1px;
+}

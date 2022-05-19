@@ -1,0 +1,5 @@
+# Backend gitignore
+node_modules
+.serverless
+package-lock.json
+.env
