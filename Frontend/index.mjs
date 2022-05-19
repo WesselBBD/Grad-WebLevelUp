@@ -3,6 +3,7 @@ import { createCard } from "./components/card/card.mjs";
 import { createButton } from "./components/button/button.mjs";
 import { createHeader } from "./components/header/header.mjs";
 import { createFooter } from "./components/footer/footer.mjs";
+import { createBanner } from "./components/banner/banner.mjs";
 
 const [header] = document.getElementsByTagName("header");
 header.append(...createHeader().children);
@@ -12,8 +13,11 @@ footer.append(...createFooter().children);
 
 const [main] = document.getElementsByTagName("main");
 
+const [banners] = document.getElementsByTagName("banner");
+
 // creates two cards - Featured and Fan of the Week
 window.addEventListener("load", function () {
+  const banner = createBanner("ceiling.jpg","MAKING YOUR NEXT CHOICE A BREEZE");
   const card = createCard(
     "ceiling.jpg",
     "You know what they say about a",
@@ -33,10 +37,11 @@ window.addEventListener("load", function () {
   const button = createButton();
   card1.appendChild(button);
   const [body] = document.getElementsByTagName("body");
-
+  body.appendChild(banner);
   body.appendChild(card);
   body.appendChild(card1);
 
+  banners.appendChild(banner);
   main.appendChild(card);
   main.appendChild(card1);
 });
