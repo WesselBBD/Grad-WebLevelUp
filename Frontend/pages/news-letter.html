@@ -17,18 +17,65 @@
 
       <h3>Don't let this opportunity fly by you.</h3>
 
-      <section id="form">
-        <label>Name</label>
-        <label>Last Name</label>
+      <form method="post">
+        <label for="name">Name</label>
+        <label for="surname">Last Name</label>
 
-        <input placeholder="Test Placeholder"/>
-        <input />
+        <input name="surname" id="name" placeholder="Enter Surname" />
 
-        <label>E-mail</label>
-        <input />
+        <input name="name" id="name" placeholder="Enter Name" />
+
+        <label class="cross-form">E-mail</label>
+        <input
+          name="email"
+          id="email"
+          placeholder="Enter E-mail"
+          class="cross-form"
+        />
 
         <label>Categories</label>
-      </section>
+
+        <section class="cross-form">
+          <input name="all" id="all" type="checkbox" />
+          <label for="all">All</label>
+        </section>
+
+        <section class="cross-form">
+          <input name="ceiling" id="ceiling" type="checkbox" />
+          <label for="ceiling">Ceiling Fans</label>
+        </section>
+
+        <section class="cross-form">
+          <input name="desk" id="desk" type="checkbox" />
+          <label for="desk">Desk Fans</label>
+        </section>
+
+        <section class="cross-form">
+          <input name="handheld" id="handheld" type="checkbox" />
+          <label for="handheld">Handheld Fans</label>
+        </section>
+
+        <section class="cross-form">
+          <input
+            name="air-conditioning"
+            id="air-conditioning"
+            type="checkbox"
+          />
+          <label for="air-conditioning">Air Conditioning</label>
+        </section>
+
+        <section class="cross-form">
+          <input name="turbine" id="turbine" type="checkbox" />
+          <label for="turbine">Turbines</label>
+        </section>
+
+        <section class="cross-form">
+          <input name="case" id="case" type="checkbox" />
+          <label for="case">PC Case</label>
+        </section>
+
+        <input type="submit" onsubmit="submitClicked()" class="cross-form" />
+      </form>
     </main>
 
     <footer></footer>
