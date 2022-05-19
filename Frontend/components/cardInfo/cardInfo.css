@@ -1,5 +1,6 @@
-.cardInfo{
+#cardInfo{
 
-    text-align: right;
+    /* text-align: right; */
+    font-weight: bolder;
 
 }

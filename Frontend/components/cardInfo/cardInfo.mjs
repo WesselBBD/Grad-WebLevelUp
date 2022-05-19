@@ -6,17 +6,41 @@ const createCardInfo = (fanData) => {
     console.log("FAN DATA");
     console.log(fanData);
 
+    
+
     const cardInfo = document.createElement("section");
     cardInfo.classList.add("cardInfo")
 
-    const detailsP= document.createElement("article");
-    let dText = document.createTextNode("RPM" +fanData.FanRPM+ "\n" + "CFM"+fanData.FanCFM);
-    detailsP.appendChild(dText);
+    const detailsP= document.createElement("p");
+    detailsP.setAttribute("id","cardInfo");
+    let dText = document.createTextNode("RPM: " +fanData.FanRPM+ "\n" + "CFM: "+fanData.FanCFM+ "\n");
+    
 
-
+    
     const colorsP= document.createElement("p");
-    let colText = document.createTextNode("Base Colour: "+ fanData.BaseColour.MaterialName+ "\n" + "Accent Colour: "+ fanData.AccentColour.MaterialName + "\n");
-    colorsP.appendChild(colText);
+    colorsP.setAttribute("id","cardInfo");
+    let colText = document.createTextNode("\n"+"Base Colour: ");
+    
+    detailsP.appendChild(dText);
+    detailsP.appendChild(colText);
+
+
+    // const colorsP= document.createElement("p");
+    // colorsP.setAttribute("id","cardInfo");
+    // let colText = document.createTextNode("Base Colour: ");
+    // colorsP.appendChild(colText);
+
+    const colBub=document.createElement("img");
+    colBub.setAttribute("src","../../assets/imgs/star-temp.svg")
+    colBub.setAttribute("id","colBubble");
+    let temp = fanData.BaseColour.MaterialBubbleHex.substring(1);
+    let styleCol= "color:#"+ temp
+    colBub.setAttribute("style",styleCol); 
+    colorsP.appendChild(colBub);
+
+
+   
+
 
     cardInfo.appendChild(detailsP);
     cardInfo.appendChild(colorsP);
@@ -24,6 +48,7 @@ const createCardInfo = (fanData) => {
 
     return cardInfo;
 
+    
 
 
 };
