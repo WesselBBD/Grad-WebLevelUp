@@ -1,18 +1,10 @@
 const createCardInfo = (fanData) => {
-
-    // const fanData= {"id":"d74b11ec-598b-7e88-8d27-0eab84de5e5f","FanName":"Metl Wind","FanCategoryName":"Desk Fans","FanRPM":530,"FanCFM":2300,"FanSpanMM":235,"FanImageURL":"https://commons.wikimedia.org/wiki/File:Test.png","FanBaseColourName":"Stainless Steel","FanBaseColourHex":"BDBCBA","FanAccentColourName":"Stainless Steel","FanAccentColourHex":"BDBCBA"}
-
-
-    console.log("FAN DATA");
-    console.log(fanData);
-
-    
-
     const cardInfo = document.createElement("section");
     cardInfo.classList.add("cardInfo")
 
     const detailsP= document.createElement("p");
     detailsP.setAttribute("id","cardInfo");
+<<<<<<< HEAD
     let dText = document.createTextNode("RPM: " +fanData.FanRPM+ "\n" + "CFM: "+fanData.FanCFM+ "\n");
     
 
@@ -53,17 +45,28 @@ const createCardInfo = (fanData) => {
     accCol.appendChild(accText);
 
     detailsP.append(accCol);
+=======
+    let dText = document.createTextNode("RPM - " +fanData.FanRPM+ "\n" + "CFM - "+fanData.FanCFM+ "\n" + "Blade Span (mm) - "+fanData.FanSpanMM+ "\n");
 
+    const coloursList = document.createElement('ul');
+    let baseItem = document.createElement('li');
+    baseItem.appendChild(document.createTextNode('Base Colour - ' + fanData.FanBaseColourName));
+    baseItem.classList.add('baseColour');
+    coloursList.appendChild(baseItem);
+    document.documentElement.style.setProperty('--base-colour', '#' + fanData.FanBaseColourHex);
+>>>>>>> feature/content-page-updates
 
+    let accentItem = document.createElement('li');
+    accentItem.appendChild(document.createTextNode('Accent Colour - ' + fanData.FanAccentColourName));
+    accentItem.classList.add('accentColour');
+    coloursList.appendChild(accentItem);
+    document.documentElement.style.setProperty('--accent-colour', '#' + fanData.FanAccentColourHex);
+
+    detailsP.appendChild(dText);
+    detailsP.appendChild(coloursList);
     cardInfo.appendChild(detailsP);
-    cardInfo.appendChild(colorsP);
-
 
     return cardInfo;
-
-    
-
-
 };
 
 export { createCardInfo };

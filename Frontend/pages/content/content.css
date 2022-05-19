@@ -52,3 +52,65 @@ main {
     font-weight: 800;
     font-size: 5em;
 }
+
+#cardInfo{
+    color: white;
+    font-weight: bolder;
+}
+
+.cardInfo ul {
+    margin: 0;
+    padding: 0;
+}
+
+.cardInfo li {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin-bottom: -2rem;
+    padding: 0;
+}
+
+.cardInfo li::before {
+    content: '●';
+    font-size: 5rem;  
+    margin-top: -0.5rem;
+}
+
+.baseColour::before {
+    color: var(--base-colour);
+}
+
+.accentColour::before {
+    color: var(--accent-colour);
+}
+
+#filters .heading {
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: -0.04rem;
+    color: var(--dark);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+#filters {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.slider-box {
+    text-align: left;
+}
+
+#loading {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#fanImg {
+    width: 20rem;
+}
