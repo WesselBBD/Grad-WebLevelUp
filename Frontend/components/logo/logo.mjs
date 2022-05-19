@@ -10,10 +10,6 @@ const createLogoBox = (id) => {
   logoBox.appendChild(logo);
 
   return logoBox;
-<<<<<<< Updated upstream:Frontend/components/logo/logo.mjs
-}
-=======
 };
->>>>>>> Stashed changes:Frontend/components/logo/logo.js
 
 export { createLogoBox };
