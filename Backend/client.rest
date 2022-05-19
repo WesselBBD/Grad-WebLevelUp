@@ -22,5 +22,5 @@ POST {{domain}}/api/contact-details
   "name": "Diana",
   "surname": "Prince",
   "email": "dianaprince@gmail.com",
-  "category": "Case Fans"
+  "categoryId": "2"
 }

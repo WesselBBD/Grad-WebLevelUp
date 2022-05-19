@@ -14,7 +14,7 @@ const postContactDetails = async (event) => {
     return badRequest;
   }
 
-  db.query(`INSERT INTO User (UserName, UserEmail, CategoryId) VALUES ('${name} ${surname}', '${surname}', '${categoryId}');`)
+  db.query(`INSERT INTO User (UserName, UserEmail, CategoryId) VALUES ('${name} ${surname}', '${email}', '${categoryId}');`)
 
   return {
     statusCode: 200,
