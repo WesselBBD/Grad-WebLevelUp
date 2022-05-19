@@ -3,6 +3,7 @@ import { createCard } from "./components/card/card.js";
 import { createButton } from "./components/button/button.js";
 import { createHeader } from "./components/header/header.js";
 import { createFooter } from "./components/footer/footer.js";
+import { createGlass } from "./components/glass/glass.js";
 
 const [header] = document.getElementsByTagName("header");
 header.append(...createHeader().children);
@@ -36,7 +37,7 @@ window.addEventListener("load", function () {
 
   body.appendChild(card);
   body.appendChild(card1);
-
+  createGlass(document.getElementById('fotw'));
   main.appendChild(card);
   main.appendChild(card1);
 });
