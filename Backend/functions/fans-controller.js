@@ -14,6 +14,10 @@ const filterFans = async ({ category }) => {
 
     return {
       statusCode: 200,
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Credentials': true,
+      },
       body: JSON.stringify(response),
     };
   } catch (error) {
@@ -29,6 +33,10 @@ const getFans = async (event) => {
 
       return {
         statusCode: 200,
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Credentials': true,
+        },
         body: JSON.stringify(response),
       };
     } catch (error) {
