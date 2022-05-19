@@ -1,9 +1,10 @@
-import { createStars } from "./components/stars/stars.js";
-import { createCard } from "./components/card/card.js";
-import { createButton } from "./components/button/button.js";
-import { createHeader } from "./components/header/header.js";
-import { createFooter } from "./components/footer/footer.js";
 import { goToPage } from "./utils/navigation.js";
+import { createStars } from "./components/stars/stars.mjs";
+import { createCard } from "./components/card/card.mjs";
+import { createButton } from "./components/button/button.mjs";
+import { createHeader } from "./components/header/header.mjs";
+import { createFooter } from "./components/footer/footer.mjs";
+
 
 const [header] = document.getElementsByTagName("header");
 header.append(...createHeader().children);
