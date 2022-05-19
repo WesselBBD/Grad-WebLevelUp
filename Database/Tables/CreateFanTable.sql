@@ -12,6 +12,7 @@ CREATE TABLE IF NOT EXISTS `Fan`
     `FanCFM` INT NOT NULL,
     `FanSpanMM` INT NOT NULL,
     `FanImageURL` VARCHAR(100) NOT NULL,
+    `FanStars` TINYINT NOT NULL,
     `FanBaseColour` INT NOT NULL,
     `FanAccentColour` INT NOT NULL
 );
