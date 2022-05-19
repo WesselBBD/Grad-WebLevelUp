@@ -1,5 +1,7 @@
-import { createHeader } from "../../components/header/header.js";
-import { createFooter } from "../../components/footer/footer.js";
+import { createHeader } from "../../components/header/header.mjs";
+import { createFooter } from "../../components/footer/footer.mjs";
+
+
 
 
 const [header] = document.getElementsByTagName("header");
@@ -27,12 +29,28 @@ window.addEventListener("load", function() {
 
     const f=this.document.createTextNode("4");
     error.appendChild(f);
+    
+
+    const sub=this.document.createElement("p");
+    let subtitleT= this.document.createTextNode("It has hit the fan");
+    sub.setAttribute("id","err");
+    sub.appendChild(subtitleT);
+    error.appendChild(sub);
+
+    const link= this.document.createElement("a");
+    link.setAttribute("href","/index.html");
+    link.setAttribute("id","homeLink")
+    let linkTe= this.document.createTextNode("Breeze over to Main Menu")
+    link.appendChild(linkTe);
+
+
+
     rotateFanSection.appendChild(error);
 
-
-    const subtitle= this.document.createTextNode("It has hit the fan")
     
-    main.appendChild(subtitle);
+    rotateFanSection.appendChild(link);    
+    
+    // rotateFanSection.appendChild(sub);
 
     main.appendChild(rotateFanSection);
 

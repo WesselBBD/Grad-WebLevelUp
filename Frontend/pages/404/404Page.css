@@ -21,3 +21,12 @@
 #fanImg{
     display: inline-block;
 }
+
+#err{
+    font-size: 3rem;
+}
+
+#homeLink{
+    font-size: 1rem;
+    text-decoration: underline;
+}
