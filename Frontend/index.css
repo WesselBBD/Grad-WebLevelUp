@@ -1,4 +1,4 @@
-@import "./colours.css";
+@import "./colours.css?v=2";
 
 main {
     margin: 0 1rem;
