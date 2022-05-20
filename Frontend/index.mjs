@@ -16,6 +16,7 @@ footer.append(... createFooter().children);
 
 const [main] = document.getElementsByTagName("main");
 const [banners] = document.getElementsByTagName("banner");
+banners.append(... createBanner("0001.png","MAKING YOUR NEXT CHOISE A BREEZE"));
 
 window.addEventListener("load", function() {
   populatePageData();
